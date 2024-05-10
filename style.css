@@ -1,0 +1,127 @@
+@font-face {
+	font-family: Edge;
+	src: url(assets/edge.otf);
+}
+
+@font-face {
+	font-family: SpaceMono;
+	src: url(assets/SpaceMono-Regular.ttf);
+}
+@font-face {
+	font-family: SpaceMono;
+	src: url(assets/SpaceMono-Bold.ttf);
+	font-weight: bold;
+}
+@font-face {
+	font-family: SpaceMono;
+	src: url(assets/SpaceMono-Italic.ttf);
+	font-style: italic;
+}
+@font-face {
+	font-family: SpaceMono;
+	src: url(assets/SpaceMono-BoldItalic.ttf);
+	font-style: italic;
+	font-weight: bold;
+}
+
+body {
+	font-family: SpaceMono, monospace;
+	color: white;
+	background-color: black;
+}
+
+h1 {
+	font-family: Edge;
+	font-size: 100px;
+	font-weight: 100;
+	color: white;
+	margin: 0;
+	position: relative;
+}
+.title {
+	font-size: 50px;
+}
+
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 300px;
+	padding-left: 10vw;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	background: url("assets/bg.jpeg"), rgb(223, 96, 54);
+	background-size: cover;
+	background-blend-mode:multiply;
+	padding-bottom: 3vw;
+}
+.content {
+	padding-top: 5%;
+	position: absolute;
+	top: calc(300px - 1.25vw);
+	left: 0;
+	width: 100%;
+	box-sizing: border-box;
+	background-color: rgb(0, 0, 0);
+	z-index: 2;
+	padding-left: 10vw;
+	padding-right: 10vw;
+	padding-bottom: 100px;
+	clip-path: polygon(0vw 1.25vw,1.25vw 0vw,2.5vw 1.25vw,3.75vw 0vw,5vw 1.25vw,6.25vw 0vw,7.5vw 1.25vw,8.75vw 0vw,10vw 1.25vw,11.25vw 0vw,12.5vw 1.25vw,13.75vw 0vw,15vw 1.25vw,16.25vw 0vw,17.5vw 1.25vw,18.75vw 0vw,20vw 1.25vw,21.25vw 0vw,22.5vw 1.25vw,23.75vw 0vw,25vw 1.25vw,26.25vw 0vw,27.5vw 1.25vw,28.75vw 0vw,30vw 1.25vw,31.25vw 0vw,32.5vw 1.25vw,33.75vw 0vw,35vw 1.25vw,36.25vw 0vw,37.5vw 1.25vw,38.75vw 0vw,40vw 1.25vw,41.25vw 0vw,42.5vw 1.25vw,43.75vw 0vw,45vw 1.25vw,46.25vw 0vw,47.5vw 1.25vw,48.75vw 0vw,50vw 1.25vw,51.25vw 0vw,52.5vw 1.25vw,53.75vw 0vw,55vw 1.25vw,56.25vw 0vw,57.5vw 1.25vw,58.75vw 0vw,60vw 1.25vw,61.25vw 0vw,62.5vw 1.25vw,63.75vw 0vw,65vw 1.25vw,66.25vw 0vw,67.5vw 1.25vw,68.75vw 0vw,70vw 1.25vw,71.25vw 0vw,72.5vw 1.25vw,73.75vw 0vw,75vw 1.25vw,76.25vw 0vw,77.5vw 1.25vw,78.75vw 0vw,80vw 1.25vw,81.25vw 0vw,82.5vw 1.25vw,83.75vw 0vw,85vw 1.25vw,86.25vw 0vw,87.5vw 1.25vw,88.75vw 0vw,90vw 1.25vw,91.25vw 0vw,92.5vw 1.25vw,93.75vw 0vw,95vw 1.25vw,96.25vw 0vw,97.5vw 1.25vw,98.75vw 0vw,100vw 1.25vw,100% 100%, 0% 100%);
+}
+.cards {
+	display: flex;
+	flex-wrap:wrap;
+}
+.card {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	position: relative;
+	min-width: 300px;
+	margin: 20px;
+	margin-bottom: 40px;
+	color: inherit;
+	text-decoration: none;
+}
+.card > .thumbnail {
+	flex:1;
+	max-width: 100%;
+	border-radius: 10px;
+	object-fit: cover;
+}
+.card > .caption {
+	margin: 0;
+	position: absolute;
+	bottom: -50px;
+	left: 10px;
+	right: 10px;
+	padding: 10px;
+	box-sizing: border-box;
+	filter: drop-shadow(0 0 10px rgb(0, 0, 0));
+	-webkit-filter: drop-shadow(0 0 10px rgb(0, 0, 0));
+}
+.caption > h2, a {
+	color: inherit;
+	text-decoration:underline;
+	text-decoration-color: teal;
+}
+.caption > h2 {
+	text-decoration-thickness: 6px;
+}
+a {
+	text-decoration-thickness: 3px;
+}
+.caption > p, .caption > h2 {
+	margin: inherit;
+}
+
+footer {
+	position:fixed;
+	bottom: 0;
+	z-index: 3;
+	filter: drop-shadow(0 0 5px black);
+}
