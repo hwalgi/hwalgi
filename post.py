@@ -9,10 +9,9 @@ newFile.write(f"""<!DOCTYPE html>
 <head>
 	<meta charset="UTF-8" />
 	<title>{title}</title>
-	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />	<meta name="description" content="Hwalgi is host to award-winning, unflinching, uncompromised opinions." />
 	<link rel="stylesheet" type="text/css" href="../style.css" />
-	<link rel="icon" href="">
+	<link rel="icon" href="icon.png">
 </head>
 <body>
 	<div class="header">
