@@ -125,8 +125,11 @@ h1 {
 }
 
 footer {
-	position:fixed;
-	bottom: 0;
+	position:absolute;
+	bottom: 10px;
 	z-index: 3;
 	filter: drop-shadow(0 0 5px black);
+}
+footer > small > span {
+	font-family: Arial, Helvetica, sans-serif;
 }
