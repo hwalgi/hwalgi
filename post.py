@@ -44,15 +44,15 @@ from datetime import date
 today = date.today()
 
 main = open("index.html", "r").read()
-start = main.index("<div class=\"cards\">")
-newMain = main[:start + 19]
-newMain += f"""
-			<a class="card" href="{"posts/" + title.replace(" ", "_").lower() + ".html"}"> 
+start = main.index("<!-- last post -->")
+newMain = main[:start]
+newMain += f"""<a class="card" href="{"posts/" + title.replace(" ", "_").lower() + ".html"}"> 
 				<img class="thumbnail" src="{img}">
 				<div class="caption">
 					<h2><span>{title}</span></h2>
 					<p>{today.strftime("%%Y")}</p>
 				</div>
-			</a>"""
-newMain += main[start+19:]
+			</a>
+			"""
+newMain += main[start:]
 open("index.html", "w").write(newMain)
