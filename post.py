@@ -12,20 +12,20 @@ newFile.write(f"""<!DOCTYPE html>
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="Hwalgi is host to award-winning, unflinching, uncompromised opinions." />
 	<link rel="stylesheet" type="text/css" href="../style.css" />
-	<link rel="icon" href="icon.png">
+	<link rel="icon" href="../icon.png">
     <!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://hwalgi.williamck.org/{"posts/" + title.replace(" ", "_").lower() + ".html"}" />
 	<meta property="og:title" content="{title}" />
 	<meta property="og:description" content="Hwalgi is host to award-winning, unflinching, uncompromised opinions." />
-	<meta property="og:image" content="https://i.imgur.com/Vy3JKT4.png" />
+	<meta property="og:image" content="https://i.ibb.co/RN5Qk2N/Screenshot-2024-05-29-at-11-54-46-AM.png" />
 	
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
 	<meta property="twitter:url" content="https://hwalgi.williamck.org/{"posts/" + title.replace(" ", "_").lower() + ".html"}" />
 	<meta property="twitter:title" content="{title}" />
 	<meta property="twitter:description" content="Hwalgi is host to award-winning, unflinching, uncompromised opinions." />
-	<meta property="twitter:image" content="https://i.imgur.com/Vy3JKT4.png" />
+	<meta property="twitter:image" content="https://i.ibb.co/RN5Qk2N/Screenshot-2024-05-29-at-11-54-46-AM.png" />
 </head>
 <body>
 	<div class="header">
