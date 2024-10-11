@@ -220,4 +220,5 @@ a.story:hover {
 }
 .article > h1 {
 	font-family: Edge;
+	font-weight: inherit;
 }
