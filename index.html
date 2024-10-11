@@ -7,63 +7,81 @@
 	<meta name="description" content="Hwalgi is host to award-winning, unflinching, uncompromised opinions." />
 	<link rel="stylesheet" type="text/css" href="style.css" />
 	<link rel="icon" href="icon.png">
-	<!-- Open Graph / Facebook -->
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://hwalgi.williamck.org/" />
-	<meta property="og:title" content="Hwalgi" />
-	<meta property="og:description" content="Hwalgi is host to award-winning, unflinching, uncompromised opinions." />
-	<meta property="og:image" content="https://i.imgur.com/Vy3JKT4.png" />
-	
-	<!-- Twitter -->
-	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:url" content="https://hwalgi.williamck.org/" />
-	<meta property="twitter:title" content="Hwalgi" />
-	<meta property="twitter:description" content="Hwalgi is host to award-winning, unflinching, uncompromised opinions." />
-	<meta property="twitter:image" content="https://i.imgur.com/Vy3JKT4.png" />
 </head>
 <body>
-	<div class="header">
-		<p>William Choi-Kim presents</p>
-		<h1>Hwalgi</h1>
+	<div class="navbar">
+		<a href="/" class="active">Feed</a>
+		<a href="/about.html">About</a>
+		<a href="/submit.html">Submit</a>
 	</div>
-	<div class="content">
-		<p>Award-winning, unflinching, uncompromised opinions.</p>
-		<hr>
-		<div class="cards">
-			<a class="card" href="posts/the_problem_with_popcorn.html"> 
-				<img class="thumbnail" src="https://images.unsplash.com/photo-1639161863028-1b3979c6001a?q=80&w=2831&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-				<div class="caption">
-					<h2><span>The Problem With Popcorn</span></h2>
-					<p>2023</p>
-				</div>
-			</a>
-			<a class="card" href="posts/the_ai_issue_isn't_an_issue.html"> 
-				<img class="thumbnail" src="https://images.unsplash.com/photo-1516192518150-0d8fee5425e3?q=80&w=2836&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-				<div class="caption">
-					<h2><span>The AI Issue Isn't an Issue</span></h2>
-					<p>2023</p>
-				</div>
-			</a>
-			<a class="card" href="posts/affirmative_action_ended_the_wrong_way.html"> 
-				<img class="thumbnail" src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=2972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-				<div class="caption">
-					<h2><span>Affirmative Action Ended the Wrong Way</span></h2>
-					<p>2023</p>
-				</div>
-			</a>
-			<a class="card" href="posts/fukushima_isn't_about_the_environment.html"> 
-				<img class="thumbnail" src="https://images.unsplash.com/photo-1627955586805-93ceecc041a2?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-				<div class="caption">
-					<h2><span>Fukushima Isn't About the Environment</span></h2>
-					<p>2023</p>
-				</div>
-			</a>
-			<!-- last post -->
+	<div class="title" id="titleCont">
+		<div id="title">
+			Hwalgi
 		</div>
-		<footer>
-			<small><span>©</span> <script>document.write(new Date().getFullYear())</script> William Choi-Kim. All Rights Reserved.</small>
-		</footer>
-		<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="rockwill" data-description="Support me on Buy me a coffee!" data-message="" data-color="#FF813F" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+		<p id="sub">Empowering student voices</p>
 	</div>
+	<div class="bigGrid">
+		<div class="left">
+			<div class="story">
+				<h2>Featured Story</h2>
+			</div>
+			<a class="story" id="feat">
+				...Loading...
+				<sub>...Loading...</sub>
+				<div class="author">
+					...Loading...
+				</div>
+			</a>
+			<div class="story">
+				<h2>New Stories</h2>
+			</div>
+			<a class="story" id="new2">
+				...Loading...
+				<sub>...Loading...</sub>
+				<div class="author">
+					...Loading...
+				</div>
+			</a>
+			<a class="story" id="new1">
+				...Loading...
+				<sub>...Loading...</sub>
+				<div class="author">
+					...Loading...
+				</div>
+			</a>
+			<div class="story">
+				<h2>Funny</h2>
+			</div>
+			<a class="story">
+				Coming Soon...
+			</a>
+		</div>
+		<div class="right">
+			<div class="story">
+				<h2>Politics</h2>
+			</div>
+			<div class="story" id="polit">
+				...Loading...
+			</div>
+			<div class="story">
+				<h2>Science</h2>
+			</div>
+			<a class="story" id="sci">
+				...Loading...
+				<sub>...Loading...</sub>
+				<div class="author">
+					...Loading...
+				</div>
+			</a>
+			<div class="story">
+				<h2>Travel</h2>
+			</div>
+			<a class="story">
+				Coming Soon...
+			</a>
+		</div>
+	</div>
+	<script src="app.js"></script>
+	<script src="read.js"></script>
 </body>
 </html>

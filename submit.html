@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Submit | Hwalgi</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<meta name="description" content="Hwalgi is host to award-winning, unflinching, uncompromised opinions." />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="icon" href="icon.png">
+</head>
+<body>
+	<div class="navbar">
+		<a href="/">Feed</a>
+		<a href="/about.html">About</a>
+		<a href="/submit.html" class="active">Submit</a>
+	</div>
+	<div class="title" id="titleCont">
+		<div id="title">
+			Submit
+		</div>
+		<p id="sub">Putting ourselves out there</p>
+	</div>
+	<div class="content">
+        <form class="form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfQHvRNYlPBdWp3bI4FY5BlSGBovsynhuwuzMSwemeGoerrmg/formResponse" id="submissionForm">
+
+            <label for="name">Name *</label>
+            <input name="entry.1594192402" type="text" id="name" required/>
+  
+            <label for="email">Email *</label>
+            <input name="entry.1880093296" type="email" id="email" required />
+
+            <label for="hours">Number of hours spent *</label>
+            <input name="entry.1237476617" type="number" id="hours" required/>
+
+            <label for="text">Essay Manuscript *</label>
+            <textarea name="entry.1817590422" type="text" id="text" required></textarea>
+  
+  
+            <input type="submit" value="Send" />
+      </form>
+      <p hidden id="message"></p>
+    </div>
+	<script src="app.js"></script>
+    <script>
+        document.getElementById('submissionForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents the default form submission
+            
+            const formData = new FormData(this);
+            
+            fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSfQHvRNYlPBdWp3bI4FY5BlSGBovsynhuwuzMSwemeGoerrmg/formResponse', {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' // Allows for cross-origin requests without redirect
+            })
+            .then(response => {
+                console.log('Form submitted successfully', response);
+                document.getElementById("message").innerText = "Thank you! Your submission has been received and will be reviewed."
+                document.getElementById("message").hidden = false
+                // You can add additional logic here, like displaying a success message
+            })
+            .catch(error => {
+                console.error('Error submitting form', error);
+                document.getElementById("message").innerText = "Something went wrong."
+                document.getElementById("message").hidden = false
+            });
+        });
+    </script>
+	<script src="scrollText.js"></script>
+</body>
+</html>
