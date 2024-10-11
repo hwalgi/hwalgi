@@ -1,3 +1,4 @@
+// letter animations on load
 onload = () => {
     document.getElementById("title").innerHTML = document.getElementById("title").innerText.split("").map((x, i) => `<p class="letter" style="
 	translate: 0 1em;">${x}</p>`).join("")

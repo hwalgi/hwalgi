@@ -6,9 +6,13 @@ async function getData() {
         throw new Error(`Response status: ${response.status}`);
       }
   
+      // get spreadsheet contents
       response.text().then(
         (data) => {
+            // parse spreadsheet contents
             let articles = data.split("\n").filter(x => (!x.startsWith(","))).splice(1).join("\n").split("(::)(::)").filter(y => y != "\r")
+            
+            // serve specific article
             if (window.location.href.includes("article.html")) {
                 num = parseInt(window.location.href.split("?")[1])
                 art = articles[num]
@@ -19,7 +23,7 @@ async function getData() {
                 document.getElementById("tit").innerText = title
                 document.getElementById("aut").innerText = aut
                 document.getElementById("cont").innerText = text
-            } else {
+            } /* serve all articles */ else {
                 let index = 0
                 for (let art of articles) {
                     let title = art.split(",\"")[0]
@@ -31,6 +35,7 @@ async function getData() {
                                 <div class="author">
                                     ${aut}
                                 </div>`
+                    // place in tag category on home page
                     switch (tag) {
                         case "Featured":
                             document.getElementById("feat").href = `/article.html?${index}`
@@ -59,9 +64,9 @@ async function getData() {
     
                     index++
                 }
+                // remove loading placeholders
                 document.getElementById("polit").remove()
                 document.getElementById("sci").remove()
-                console.log(allArticleData)
             }
         })
     } catch (error) {
