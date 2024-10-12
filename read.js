@@ -13,7 +13,7 @@ async function getData() {
             let articles = data.split("\n").filter(x => (!x.startsWith(","))).splice(1).join("\n").split("(::)(::)").filter(y => y != "\r")
             
             // serve specific article
-            if (window.location.href.includes("article.html")) {
+            if (window.location.href.includes("article")) {
                 num = parseInt(window.location.href.split("?")[1])
                 art = articles[num]
                 let title = art.split(",\"")[0]

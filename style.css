@@ -222,3 +222,15 @@ a.story:hover {
 	font-family: Edge;
 	font-weight: inherit;
 }
+#cont {
+	word-wrap: break-word;
+}
+
+#bg {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: white;
+}
