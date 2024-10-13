@@ -25,6 +25,8 @@ async function getData() {
                 document.getElementById("cont").innerText = text
             } /* serve all articles */ else {
                 let index = 0
+                let replaced = []
+                let tags = []
                 for (let art of articles) {
                     let title = art.split(",\"")[0]
                     let aut = art.split(",")[art.split(",").length - 3]
@@ -35,27 +37,15 @@ async function getData() {
                                     ${aut}
                                 </div>`
                     // place in tag category on home page
-                    switch (tag) {
-                        case "Featured":
-                            document.getElementById("feat").href = `/article.html?${index}`
-                            document.getElementById("feat").innerHTML = contents
-                            break
-                        case "Politics":
-                            aa = document.createElement("a")
-                            aa.href = `/article.html?${index}`
-                            aa.className = "story"
-                            aa.innerHTML = contents
-                            document.getElementById("polit").parentNode.insertBefore(aa, document.getElementById("polit"))
-                            break
-                        case "Science":
-                            aa = document.createElement("a")
-                            aa.href = `/article.html?${index}`
-                            aa.className = "story"
-                            aa.innerHTML = contents
-                            document.getElementById("sci").parentNode.insertBefore(aa, document.getElementById("sci"))
-                            break     
-                    }  
+                    aa = document.createElement("a")
+                    aa.href = `/article.html?${index}`
+                    aa.className = "story " + tag + "TAG"
+                    aa.innerHTML = contents
+                    document.getElementById(tag + " Place").parentNode.insertBefore(aa, document.getElementById(tag + " Place"))
+                    replaced.push(tag + " Place")
+                    tags.push(tag)
     
+
                     if (index >= articles.length - 2) {
                         document.getElementById(`new${index-articles.length+3}`).href = `/article.html?${index}`
                         document.getElementById(`new${index-articles.length+3}`).innerHTML = contents
@@ -63,9 +53,14 @@ async function getData() {
     
                     index++
                 }
+
                 // remove loading placeholders
-                document.getElementById("polit").remove()
-                document.getElementById("sci").remove()
+                replaced.filter((x, i) => replaced.indexOf(x) == i).map(x => document.getElementById(x).remove())
+
+                let tagCont = document.getElementById("tags")
+                for (tag of tags.filter((x, i) => tags.indexOf(x) == i)) {
+                    tagCont.innerHTML += `<button class="tagSelected" onclick="deactivateTag('${tag}', this)">${tag}</button>`
+                }
             }
         })
     } catch (error) {
@@ -73,3 +68,11 @@ async function getData() {
     }
   }
   getData()
+
+function deactivateTag(ta, but) {
+    let stos = document.getElementsByClassName(ta + "TAG")
+    but.className = !stos[0].hidden ? "" : "tagSelected"
+    for (let sto of stos) {
+        sto.hidden = !sto.hidden
+    }
+}

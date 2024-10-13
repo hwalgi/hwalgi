@@ -35,9 +35,12 @@ body {
 	background-color: var(--spec-black);
 }
 
-h1, h2 {
+h1, h2, h3 {
 	color: white;
 	text-transform: uppercase;
+}
+h3 {
+	text-transform: lowercase;
 }
 
 .title {
@@ -86,8 +89,6 @@ h1, h2 {
 	z-index: 2;
 }
 .navbar > a {
-	color: white;
-	text-decoration: none;
 	background-color: var(--spec-black);
 	border-radius: 100vmin;
 	transition: 0.2s;
@@ -137,6 +138,27 @@ b {
 	padding-bottom: 100px;
 	flex-wrap: wrap;
 	background-color: var(--spec-black);
+}
+.tags {
+	display: flex;
+	flex-wrap: wrap;
+}
+.tags > button {
+	border: solid 1px var(--spec-orange);
+	background-color: transparent;
+	font-family: inherit;
+	color: inherit;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 10px;
+	transition: 0.2s;
+}
+.tags > .tagSelected {
+	background-color: var(--spec-orange);
+	color: var(--spec-black);
+}
+.tags > .tagSelected:hover, .tags > button:hover {
+	opacity: 0.5;
 }
 .left, .right {
 	flex:1;
@@ -279,4 +301,9 @@ a.story:hover {
 
 .date {
 	color: rgba(255, 255, 255, 0.2) !important;
+}
+
+a {
+	text-decoration: none;
+	color: white;
 }
