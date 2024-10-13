@@ -10,7 +10,7 @@ fetch("spark.txt").then(x=>x.text()).then(
             document.getElementById("bg").appendChild(sp)
         }
         setInterval(() => {
-            document.getElementById(Math.floor(Math.random()*100)+"BG").innerText = trans[Math.floor(Math.random()*trans.length)]
+            document.getElementById(Math.floor(Math.random()*500)+"BG").innerText = trans[Math.floor(Math.random()*trans.length)]
         }, 10)
     }
 )
