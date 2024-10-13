@@ -282,7 +282,7 @@ a.story:hover {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	opacity: 0.075;
+	opacity: 0.05;
 	transition: 0.2s;
 }
 .bgDiv:hover {
