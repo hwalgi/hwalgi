@@ -113,7 +113,7 @@ h3 {
 .content {
 	position: absolute;
 	top: 100vh;
-	padding: 100px;
+	padding: 50px;
 	padding-bottom: 50vh;
 	box-sizing: border-box;
 	width: 100vw;
@@ -282,7 +282,7 @@ a.story:hover {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	opacity: 0.05;
+	opacity: 0.075;
 	transition: 0.2s;
 }
 .bgDiv:hover {
