@@ -16,7 +16,7 @@ async function getData() {
             if (window.location.href.includes("article")) {
                 num = parseInt(window.location.href.split("?")[1])
                 art = articles[num]
-                let title = art.split(",\"")[0]
+                let title = art.split(",\"")[0].split("...").map(x => x.trim()).join(" / ")
                 let aut = art.split(",")[art.split(",").length - 3]
                 let tag = art.split(",")[art.split(",").length - 2]
                 let text = art.slice(art.split(",\"")[0].length + 2, art.length-tag.length-aut.length-3)
@@ -29,9 +29,8 @@ async function getData() {
                     let title = art.split(",\"")[0]
                     let aut = art.split(",")[art.split(",").length - 3]
                     let tag = art.split(",")[art.split(",").length - 2]
-                    let text = art.slice(art.split(",\"")[0].length + 2, art.length-tag.length-aut.length-3)
-                    contents = `${title.split("...")[0]}...
-                                <sub>${title.split("...")[1]}</sub>
+                    let contents = `${title.split("...")[0].trim()}...
+                                <sub>${title.split("...")[1].trim()}</sub>
                                 <div class="author">
                                     ${aut}
                                 </div>`

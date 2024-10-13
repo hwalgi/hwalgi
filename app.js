@@ -11,11 +11,13 @@ onload = () => {
     setTimeout(() => {
         document.getElementById("sub").style.opacity = 1
         setTimeout(() => {
-            window.scroll({
-                top: 200,
-                left: 0,
-                behavior: "smooth",
-              });
+            if (window.scrollY == 0) {
+                window.scroll({
+                    top: 200,
+                    left: 0,
+                    behavior: "smooth",
+                  });
+            }
         }, 300)
     }, Math.abs(0 - letters.length/2 + 1)*200 + 2000)
 }

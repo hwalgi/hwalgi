@@ -45,7 +45,6 @@ h1, h2 {
 	left: 50%;
 	top: 50%;
 	translate: -50% -50%;
-	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -137,6 +136,7 @@ b {
 	margin-bottom: 100px;
 	padding-bottom: 100px;
 	flex-wrap: wrap;
+	background-color: var(--spec-black);
 }
 .left, .right {
 	flex:1;
@@ -184,17 +184,24 @@ input[type="submit"] {
 	color: white;
 }
 
+.story {
+	text-transform: uppercase;
+}
 sub {
 	display: block;
 	color: white;
+}
+.story > sub {
+	text-transform: lowercase;
 }
 
 .author {
 	position: absolute;
 	right: 5px;
 	top: 5px;
-	color: rgba(255, 255, 255, 0.1);
+	color: rgba(255, 255, 255, 0.2);
 	font-size: 12px;
+	text-transform: capitalize;
 }
 .author::before {
 	content: "(";
@@ -226,11 +233,50 @@ a.story:hover {
 	word-wrap: break-word;
 }
 
-#bg {
+#bgCont {
 	position: absolute;
 	left: 0;
 	top: 0;
 	width: 100vw;
 	height: 100vh;
-	background-color: white;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#bg {
+	width: 150vw;
+	height: 100vh;
+	color: white;
+	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+.bgDiv {
+	width: 100px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0.05;
+	transition: 0.2s;
+}
+.bgDiv:hover {
+	opacity: 0.5;
+}
+.comment {
+	background-color: rgba(0, 0, 0, 0.3);
+	color: white;
+	padding: 10px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+}
+.comment > sub {
+	color: var(--spec-orange);
+}
+
+.date {
+	color: rgba(255, 255, 255, 0.2) !important;
 }

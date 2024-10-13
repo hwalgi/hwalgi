@@ -14,6 +14,9 @@
 		<a href="/about.html">About</a>
 		<a href="/submit.html" class="active">Submit</a>
 	</div>
+	<div id="bgCont">
+		<div id="bg"></div>
+	</div>
 	<div class="title" id="titleCont">
 		<div id="title">
 			Submit
@@ -24,16 +27,25 @@
         <form class="form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfQHvRNYlPBdWp3bI4FY5BlSGBovsynhuwuzMSwemeGoerrmg/formResponse" id="submissionForm">
 
             <label for="name">Name *</label>
-            <input name="entry.1594192402" type="text" id="name" required/>
+            <input name="entry.1594192402" type="text" id="name" placeholder="First Last" required/>
   
             <label for="email">Email *</label>
-            <input name="entry.1880093296" type="email" id="email" required />
+            <input name="entry.1880093296" type="email" id="email" placeholder="email@address.com" required />
+            
+            <label for="email">School Name *</label>
+            <input name="entry.240437314" type="text" id="email" placeholder="Middle/High School" required />
 
             <label for="hours">Number of hours spent *</label>
-            <input name="entry.1237476617" type="number" id="hours" required/>
+            <input name="entry.1237476617" type="number" id="hours" placeholder="_._" step="any" required/>
+
+            <label for="hours">Topic *</label>
+            <input name="entry.1118448734" type="text" id="hours" placeholder="big idea" required/>
+
+            <label for="hours">Subtitle *</label>
+            <input name="entry.1554651532" type="text" id="hours" placeholder="catchy tagline" required/>
 
             <label for="text">Essay Manuscript *</label>
-            <textarea name="entry.1817590422" type="text" id="text" required></textarea>
+            <textarea name="entry.1817590422" type="text" id="text" placeholder="Enter your essay here. Styling like bolding and italicization is not supported." required></textarea>
   
   
             <input type="submit" value="Send" />
@@ -66,5 +78,6 @@
         });
     </script>
 	<script src="scrollText.js"></script>
+	<script src="formatted.js"></script>
 </body>
 </html>
