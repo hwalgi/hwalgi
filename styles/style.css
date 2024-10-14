@@ -1,25 +1,25 @@
 @font-face {
 	font-family: Edge;
-	src: url(../assets/edge.otf);
+	src: url(../assets/fonts/edge.otf);
 }
 
 @font-face {
 	font-family: SpaceMono;
-	src: url(../assets/SpaceMono-Regular.ttf);
+	src: url(../assets/fonts/SpaceMono-Regular.ttf);
 }
 @font-face {
 	font-family: SpaceMono;
-	src: url(../assets/SpaceMono-Bold.ttf);
+	src: url(../assets/fonts/SpaceMono-Bold.ttf);
 	font-weight: bold;
 }
 @font-face {
 	font-family: SpaceMono;
-	src: url(../assets/SpaceMono-Italic.ttf);
+	src: url(../assets/fonts/SpaceMono-Italic.ttf);
 	font-style: italic;
 }
 @font-face {
 	font-family: SpaceMono;
-	src: url(../assets/SpaceMono-BoldItalic.ttf);
+	src: url(../assets/font/SpaceMono-BoldItalic.ttf);
 	font-style: italic;
 	font-weight: bold;
 }
@@ -114,8 +114,8 @@ h3 {
 	box-sizing: border-box;
 	left: 50%;
 	max-width: 800px;
-	padding-bottom: 50vh;
 	padding: 50px;
+	padding-bottom: 100px;
 	position: absolute;
 	text-align: center;
 	top: 100vh;
