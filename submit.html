@@ -5,8 +5,8 @@
 	<title>Submit | Hwalgi</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<meta name="description" content="Hwalgi is host to award-winning, unflinching, uncompromised opinions." />
-	<link rel="stylesheet" type="text/css" href="style.css" />
-	<link rel="icon" href="icon.png">
+	<link rel="stylesheet" type="text/css" href="styles/style.css" />
+	<link rel="icon" href="assets/images/icon.png">
 </head>
 <body>
 	<div class="navbar">
@@ -75,31 +75,8 @@
       </form>
       <p hidden id="message"></p>
     </div>
-	<script src="app.js"></script>
-    <script>
-        document.getElementById('submissionForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevents the default form submission
-            
-            const formData = new FormData(this);
-            
-            fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSfQHvRNYlPBdWp3bI4FY5BlSGBovsynhuwuzMSwemeGoerrmg/formResponse', {
-                method: 'POST',
-                body: formData,
-                mode: 'no-cors' // Allows for cross-origin requests without redirect
-            })
-            .then(response => {
-                console.log('Form submitted successfully', response);
-                document.getElementById("message").innerText = "Thank you! Your submission has been received and will be reviewed."
-                document.getElementById("message").hidden = false
-                // You can add additional logic here, like displaying a success message
-            })
-            .catch(error => {
-                console.error('Error submitting form', error);
-                document.getElementById("message").innerText = "Something went wrong."
-                document.getElementById("message").hidden = false
-            });
-        });
-    </script>
-	<script src="formatted.js"></script>
+	<script src="scripts/app.js"></script>
+    <script src="scripts/submit.js"></script>
+	<script src="scripts/formatted.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-fetch("spark.txt").then(x=>x.text()).then(
+fetch("../assets/text/spark.txt").then(x=>x.text()).then(
     x => {
         trans = x.split(" ")
         for (i = 0; i < 500; i++){
@@ -10,7 +10,12 @@ fetch("spark.txt").then(x=>x.text()).then(
             document.getElementById("bg").appendChild(sp)
         }
         setInterval(() => {
-            document.getElementById(Math.floor(Math.random()*500)+"BG").innerText = trans[Math.floor(Math.random()*trans.length)]
+            let thisElement = document.getElementById(Math.floor(Math.random()*500)+"BG")
+            thisElement.style.opacity = 0.15
+            thisElement.innerText = trans[Math.floor(Math.random()*trans.length)]
+            setTimeout(() => {
+                thisElement.style.opacity = ""
+            }, 500)
         }, 10)
     }
 )

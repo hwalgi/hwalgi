@@ -10,6 +10,7 @@ document.getElementById('submissionForm').addEventListener('submit', function(ev
         mode: 'no-cors' // Allows for cross-origin requests without redirect
     })
     .then(response => {
+        document.getElementById("submissionForm").reset()
         window.location.reload()
     })
     .catch(error => {

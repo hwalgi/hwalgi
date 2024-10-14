@@ -1,0 +1,33 @@
+.article {
+	box-sizing: border-box;
+	left: 50%;
+	max-width: 900px;
+	padding-bottom: 100px;
+	padding: 30px;
+	position: absolute;
+	top: 0;
+	translate: -50%;
+	width: 100%;
+}
+.article > h1 {
+	font-family: Edge;
+	font-weight: inherit;
+}
+#cont {
+	word-wrap: break-word;
+}
+
+.comment {
+	background-color: rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+	color: white;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+.comment > sub {
+	color: var(--spec-orange);
+}
+
+.date {
+	color: rgba(255, 255, 255, 0.2) !important;
+}
