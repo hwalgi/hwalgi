@@ -84,3 +84,34 @@ a.story:hover {
 	position: relative;
 	text-decoration: none;
 }
+
+.adOuter {
+	position: relative;
+	width: 100%;
+	height: 100%;
+
+}
+.ad {
+	border-radius: 100vmin;
+	left: 0;
+	top: 0;
+	width: 100%;
+	box-sizing: border-box;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.ad > a {
+	background-color: white;
+	color: var(--spec-orange);
+	padding: 10px;
+	box-sizing: border-box;
+	width: 100%;
+	text-align: center;
+	max-width: 300px;
+	min-height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
