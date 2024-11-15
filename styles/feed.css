@@ -116,6 +116,12 @@ a.story:hover {
 	align-items: center;
 }
 
+.story:has(.imprint) {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
 .imprint {
 	background-color: var(--spec-orange);
 	padding: 5px;
@@ -127,6 +133,7 @@ a.story:hover {
 	justify-content: center;
 	align-items: center;
 	border-radius: 100vmin;
+	max-width: 400px;
 }
 .imprint > * {
 	margin:0;
