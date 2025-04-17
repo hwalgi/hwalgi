@@ -17,7 +17,7 @@ async function getData() {
 
                 let replaced = []
                 let tagList = []
-                for (let i = 0; i < titles.length; i++) {
+                for (let i = titles.length - 1; i >= 0; i--) {
                     let title = titles[i]
                     let aut = authors[i]
                     let tag = tags[i]
@@ -46,7 +46,7 @@ async function getData() {
                 replaced.filter((x, i) => replaced.indexOf(x) == i).map(x => document.getElementById(x).remove())
 
                 let tagCont = document.getElementById("tags")
-                for (tag of tagList.filter((x, i) => tags.indexOf(x) == i)) {
+                for (tag of tagList.filter((x, i) => tagList.indexOf(x) == i)) {
                     tagCont.innerHTML += `<button class="tagSelected" onclick="deactivateTag('${tag}', this)">${tag}</button>`
                 }
             })
