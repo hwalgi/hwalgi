@@ -32,7 +32,7 @@
         <p>Be the voice.</p>
         <small>* within reason</small>
         <h2>Submission Guidelines</h2>
-        <p>To submit a piece, please scroll down to the <a href="#subForm">submission form</a>.</p>
+        <p class="sflp">To submit a piece, please scroll down to the </p><a href="#subForm" id="sfl">submission form</a><p class="sflp">.</p>
         <h3>Age</h3>
         <p>To submit a piece, you must be currently attending middle school, high school, or be between the ages of 10 and 19.</p>
         <h3>Title</h3>
@@ -69,10 +69,10 @@
             <input name="entry.1237476617" type="number" id="hours" placeholder="_._" step="any" required/>
 
             <label for="hours">Topic *</label>
-            <input name="entry.1118448734" type="text" id="hours" placeholder="big idea" required/>
+            <input name="entry.1118448734" type="text" id="hours" placeholder="big idea (Harry Potter)" required/>
 
             <label for="hours">Subtitle *</label>
-            <input name="entry.1554651532" type="text" id="hours" placeholder="catchy tagline" required/>
+            <input name="entry.1554651532" type="text" id="hours" placeholder="catchy tagline (and the Sorcerer's Stone)" required/>
 
             <label for="text">Essay Manuscript *</label>
             <textarea name="entry.1817590422" type="text" id="text" placeholder="Enter your essay here. Styling like bolding and italicization is not supported." required></textarea>
@@ -80,9 +80,10 @@
   
             <input type="submit" value="Send" />
       </form>
-      <p hidden id="message"></p>
+      <p id="message" hidden></p>
     </div>
 	<script src="scripts/app.js"></script>
+    <script src="scripts/scrollText.js"></script>
     <script src="scripts/submit.js"></script>
 	<script src="scripts/formatted.js"></script>
 </body>
