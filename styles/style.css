@@ -33,6 +33,7 @@ body {
 	background-color: var(--spec-black);
 	color: var(--spec-orange);
 	font-family: SpaceMono, monospace;
+	overflow-x: hidden;
 }
 
 h1, h2, h3 {
