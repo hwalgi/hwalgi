@@ -18,28 +18,31 @@ async function getData() {
                 let replaced = []
                 let tagList = []
                 for (let i = titles.length - 1; i >= 0; i--) {
-                    let title = titles[i]
-                    let aut = authors[i]
-                    let tag = tags[i]
-                    let contents = `${title.split("...")[0].trim()}...
-                                <sub>${title.split("...")[1].trim()}</sub>
-                                <div class="author">
-                                    ${aut}
-                                </div>`
-                    // place in tag category on home page
-                    aa = document.createElement("a")
-                    aa.href = `/article.html?${i}`
-                    aa.className = "story " + tag + "TAG"
-                    aa.innerHTML = contents
-                    document.getElementById(tag + " Place").parentNode.insertBefore(aa, document.getElementById(tag + " Place"))
-                    replaced.push(tag + " Place")
-                    tagList.push(tag)
+                    try {
+                        let title = titles[i]
+                        let aut = authors[i]
+                        let tag = tags[i]
+                        let contents = `${title.split("...")[0].trim()}...
+                                    <sub>${title.split("...")[1].trim()}</sub>
+                                    <div class="author">
+                                        ${aut}
+                                    </div>`
+                        // place in tag category on home page
+                        aa = document.createElement("a")
+                        aa.href = `/article.html?${i}`
+                        aa.className = "story " + tag + "TAG"
+                        console.log(tag)
+                        aa.innerHTML = contents
+                        document.getElementById(tag + " Place").parentNode.insertBefore(aa, document.getElementById(tag + " Place"))
+                        replaced.push(tag + " Place")
+                        tagList.push(tag)
 
 
-                    if (i >= titles.length - 2) {
-                        document.getElementById(`new${i - titles.length + 3}`).href = `/article.html?${i}`
-                        document.getElementById(`new${i - titles.length + 3}`).innerHTML = contents
-                    }
+                        if (i >= titles.length - 2) {
+                            document.getElementById(`new${i - titles.length + 3}`).href = `/article.html?${i}`
+                            document.getElementById(`new${i - titles.length + 3}`).innerHTML = contents
+                        }
+                    } catch (error) {}
                 }
 
                 // remove loading placeholders
