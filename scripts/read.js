@@ -16,12 +16,12 @@ async function getData() {
                 // serve specific article
                 num = parseInt(window.location.href.split("?")[1])
                 art = articles[num]
-                let title = art.split(",\"")[0].split("...").map(x => x.trim()).map(x => x.startsWith("\"") ? x.slice(1,) : x).map(x => x.endsWith("\"") ? x.slice(0, -1) : x).join(" / ")
+                let title = art.split(",\"")[0].split("...").map(x => x.trim()).map(x => x.startsWith("\"") ? x.slice(1,) : x).map(x => x.endsWith("\"") ? x.slice(0, -1) : x).join("<br><small>(") + ")</small>"
                 let aut = art.split(",")[art.split(",").length - 3]
                 let tag = art.split(",")[art.split(",").length - 2]
                 let text = art.slice(art.split(",\"")[0].length + 2, art.length - tag.length - aut.length - 3).replaceAll("\"\"","\"")
                 text = text.substring(0, text.lastIndexOf("\""))
-                document.getElementById("tit").innerText = title
+                document.getElementById("tit").innerHTML = title
                 document.getElementById("aut").innerText = aut
                 document.getElementById("cont").innerText = text
             })

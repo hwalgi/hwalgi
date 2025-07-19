@@ -8,13 +8,21 @@
 	top: 0;
 	translate: -50%;
 	width: 100%;
+	color: var(--spec-orange);
+	background-color: var(--spec-black);
 }
-.article > h1 {
-	font-family: Edge;
-	font-weight: inherit;
+h1, h2 {
+	font-family: ClashGrotesk, sans-serif;
+	font-weight: bold;
+	color: inherit;
 }
-#cont {
+.article > h1 > small {
+	font-style: italic;
+	font-weight: lighter;
+}
+#cont, h3 {
 	word-wrap: break-word;
+	color: white;
 }
 
 .comment {

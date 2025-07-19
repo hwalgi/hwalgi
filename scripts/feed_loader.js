@@ -22,7 +22,7 @@ async function getData() {
                         let title = titles[i]
                         let aut = authors[i]
                         let tag = tags[i]
-                        let contents = `${title.split("...")[0].trim()}...
+                        let contents = `${title.split("...")[0].trim()}
                                     <sub>${title.split("...")[1].trim()}</sub>
                                     <div class="author">
                                         ${aut}

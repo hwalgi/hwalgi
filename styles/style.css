@@ -4,24 +4,8 @@
 }
 
 @font-face {
-	font-family: SpaceMono;
-	src: url(../assets/fonts/SpaceMono-Regular.ttf);
-}
-@font-face {
-	font-family: SpaceMono;
-	src: url(../assets/fonts/SpaceMono-Bold.ttf);
-	font-weight: bold;
-}
-@font-face {
-	font-family: SpaceMono;
-	src: url(../assets/fonts/SpaceMono-Italic.ttf);
-	font-style: italic;
-}
-@font-face {
-	font-family: SpaceMono;
-	src: url(../assets/font/SpaceMono-BoldItalic.ttf);
-	font-style: italic;
-	font-weight: bold;
+	font-family: ClashGrotesk;
+	src: url(../assets/fonts/ClashGrotesk_Complete/Fonts/TTF/ClashGrotesk-Variable.ttf);
 }
 
 :root {
@@ -32,8 +16,9 @@
 body {
 	background-color: var(--spec-black);
 	color: var(--spec-orange);
-	font-family: SpaceMono, monospace;
+	font-family: ClashGrotesk, sans-serif;
 	overflow-x: hidden;
+	font-size: 18px;
 }
 
 h1, h2, h3 {
@@ -96,16 +81,19 @@ h3 {
 	box-sizing: border-box;
 	flex: 1;
 	margin: 4px;
-	padding: 4px;
+	padding: 10px;
 	text-align: center;
 	transition: 0.2s;
+	font-weight: normal;
 }
 .navbar > a.active {
 	background-color: white;
 	color: var(--spec-orange);
+	font-weight: bold;
 }
 .navbar > a:hover {
 	border: solid var(--spec-black);
+	font-weight: bold;
 }
 .navbar > a.active:hover {
 	border: solid white;
