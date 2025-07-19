@@ -24,6 +24,9 @@ h1, h2 {
 	word-wrap: break-word;
 	color: white;
 }
+#cont {
+	line-height: 1.7em;
+}
 
 .comment {
 	background-color: rgba(0, 0, 0, 0.3);
