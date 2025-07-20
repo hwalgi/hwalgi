@@ -21,6 +21,16 @@ body {
 	font-size: 18px;
 }
 
+::-moz-selection {
+  color: var(--spec-black);
+  background: var(--spec-orange);
+}
+
+::selection {
+  color: var(--spec-black);
+  background: var(--spec-orange);
+}
+
 h1, h2, h3 {
 	color: white;
 	text-transform: uppercase;
@@ -38,6 +48,7 @@ h3 {
 	position: absolute;
 	top: 50%;
 	translate: -50% -50%;
+	user-select: none;
 }
 
 #title {
@@ -154,6 +165,7 @@ input[type="submit"] {
 	position: absolute;
 	top: 0;
 	width: 100vw;
+	user-select: none;
 }
 #bg {
 	align-items: center;
