@@ -49,7 +49,7 @@ async function getData() {
                     navigator.clipboard.writeText(`@article{hwalgi_${num},
   doi = {${doi}},
   url = {https://hwalgi.org/article.html?${num}},
-  journal = {Hwalgi}
+  journal = {Hwalgi},
   author = {${aut}, },
   title = {${document.getElementById("tit").innerText}},
   publisher = {Hwalgi},
