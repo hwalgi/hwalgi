@@ -45,15 +45,17 @@ h1, h2 {
 
 .citeBtn {
 	background-color: var(--spec-orange);
-	margin-left: 10px;
 	border: none;
 	font-family: inherit;
 	font-size: inherit;
 	border-radius: 100vmin;
 	transition: 0.2s;
 	padding: 5px 10px;
-	color: inherit;
+	color: var(--spec-black);
+	display: block;
+	color: white;
 }
 .citeBtn:hover {
 	font-weight: bold;
+	color: var(--spec-black);
 }

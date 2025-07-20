@@ -41,9 +41,8 @@ async function getData() {
             (data) => {
                 let num = parseInt(window.location.href.split("?")[1])
                 let doi = data.split("\n")[num].trim()
-                document.getElementById("doi").innerText = `doi: ${doi}`
                 citeBtn = document.createElement("button")
-                citeBtn.innerText = "Cite this article"
+                citeBtn.innerText = `Cite this article - ${doi}`
                 citeBtn.className = "citeBtn"
                 citeBtn.onclick = () => {
                     navigator.clipboard.writeText(`@article{hwalgi_${num},
@@ -58,9 +57,10 @@ async function getData() {
 }`)
                     citeBtn.innerText = "Bibtex copied to clipboard!"
                     setTimeout(() => {
-                        citeBtn.innerText = "Cite this article"
+                        citeBtn.innerText = `Cite this article - ${doi}`
                     }, 1000)
                 }
+                document.getElementById("doi").innerHTML = ""
                 document.getElementById("doi").appendChild(citeBtn) 
             })
     } catch (error) {
