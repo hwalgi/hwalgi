@@ -42,3 +42,17 @@ h1, h2 {
 .date {
 	color: rgba(255, 255, 255, 0.2) !important;
 }
+
+.citeBtn {
+	background-color: var(--spec-orange);
+	margin-left: 10px;
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	border-radius: 100vmin;
+	transition: 0.2s;
+	padding: 5px 10px;
+}
+.citeBtn:hover {
+	font-weight: bold;
+}
