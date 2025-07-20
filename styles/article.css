@@ -52,6 +52,7 @@ h1, h2 {
 	border-radius: 100vmin;
 	transition: 0.2s;
 	padding: 5px 10px;
+	color: inherit;
 }
 .citeBtn:hover {
 	font-weight: bold;
