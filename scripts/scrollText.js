@@ -4,7 +4,6 @@ for (p of ps) {
     p.style.color = "white"
 }
 onscroll = () => {
-    y = window.scrollY
     for (p of ps) {
         t = p.getBoundingClientRect().top
         b = p.getBoundingClientRect().bottom
