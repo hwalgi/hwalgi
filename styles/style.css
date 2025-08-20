@@ -31,6 +31,10 @@ body {
   background: var(--spec-orange);
 }
 
+h1, h2 {
+	text-transform: uppercase;
+	color: var(--spec-orange);
+}
 h3 {
 	text-transform: lowercase;
 }
