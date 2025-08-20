@@ -31,7 +31,6 @@ async function getData() {
                         aa = document.createElement("a")
                         aa.href = `/article/${i}`
                         aa.className = "story " + tag + "TAG"
-                        console.log(tag)
                         aa.innerHTML = contents
                         document.getElementById(tag + " Place").parentNode.insertBefore(aa, document.getElementById(tag + " Place"))
                         replaced.push(tag + " Place")

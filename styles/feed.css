@@ -2,20 +2,20 @@
 	text-transform: uppercase;
 }
 sub {
-	color: white;
+	color: var(--spec-orange);
 	display: block;
 }
 .story > sub {
 	text-transform: lowercase;
+	font-size: 18px;
 }
 
 .author {
-	color: rgba(255, 255, 255, 0.2);
 	font-size: 12px;
 	position: absolute;
-	right: 5px;
+	right: 10px;
 	text-transform: capitalize;
-	top: 5px;
+	bottom: 5px;
 }
 .author::before {
 	content: "(";
@@ -24,10 +24,11 @@ sub {
 	content: ")";
 }
 
-a.story:hover {
-	background-color: var(--spec-orange);
-	color: var(--spec-black);
+a.story {
 	transition: 0.2s;
+}
+a.story:hover {
+	background-color: rgba(255, 255, 255, 0.02);
 }
 
 .left > a:last-child, .right > a:last-child {
@@ -62,17 +63,20 @@ a.story:hover {
 	transition: 0.2s;
 	flex: 1;
 	box-sizing: border-box;
-	color: white;
-	opacity: 0.7;
+	color: white !important;
+	text-decoration: line-through;
+	font-style: italic;
 }
 .tags > .tagSelected {
 	background-color: var(--spec-orange);
 	color: var(--spec-black);
 	opacity: 1;
+	text-decoration: none;
+	font-style: normal;
 }
 .tags > .tagSelected:hover, .tags > button:hover, .tags > button:active {
 	rotate: -2deg;
-	color: white;
+	font-weight: bold;
 }
 .tags > button:active {
 	opacity: 0.3;

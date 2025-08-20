@@ -15,7 +15,7 @@
 
 body {
 	background-color: var(--spec-black);
-	color: var(--spec-orange);
+	color: white;
 	font-family: ClashGrotesk, sans-serif;
 	overflow-x: hidden;
 	font-size: 18px;
@@ -31,15 +31,12 @@ body {
   background: var(--spec-orange);
 }
 
-h1, h2, h3 {
-	color: white;
-	text-transform: uppercase;
-}
 h3 {
 	text-transform: lowercase;
 }
 
 .title {
+	color: var(--spec-orange);
 	align-items: center;
 	display: flex;
 	flex-direction: column;
@@ -246,7 +243,7 @@ video {
 	margin: 0;
 }
 #banner {
-	max-width: fit-content;
+	width: min(calc(100% - 20px), 600px);
 	background-color: var(--spec-orange);
 	color: var(--spec-black);
 	font-weight: bold;
@@ -255,7 +252,6 @@ video {
 	translate: -50% 0;
 	top: 0;
 	margin: 10px;
-	width: calc(100% - 20px);
 	border-radius: 100vmin;
 	padding: 10px;
 	padding-left: 50px;
