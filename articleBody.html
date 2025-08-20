@@ -1,0 +1,30 @@
+<div class="navbar">
+    <a href="/" class="active">Feed</a>
+    <a href="/about.html">About</a>
+    <a href="/submit.html">Submit</a>
+</div>
+
+<div class="article">
+    <sub id="doi">doi (loading)...</sub>
+    <h1 id="tit">title (loading).</h1>
+    <sub id="aut">author (loading).</sub>
+    <p id="cont">contents (loading).</p>
+
+    <div class="comments">
+        <h2>Comments</h2>
+        <h3>Submit a comment</h3>
+        <form class="form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdhxWf1FCiUJaDYZAx462VBsv_PGlkg8Q5olsStP7zzQI3mrA/formResponse" id="submissionForm">
+            <input id="commentID" name="entry.1362159903" value="0" hidden>
+            <label for="email">Email *</label>
+            <input name="entry.1784137562" type="email" id="email" placeholder="email@address.com" required />
+            <label for="name">Comment *</label>
+            <input name="entry.227513125" type="text" id="name" placeholder="Enter your comment here" required/>
+            <input type="submit" value="Post" />
+        </form>
+        <h3>Posted Comments</h3>
+        <div id="comments">
+            Loading...
+        </div>
+    </div>
+</div>
+<script src="scripts/comments.js"></script>

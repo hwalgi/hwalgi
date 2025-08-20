@@ -29,7 +29,7 @@ async function getData() {
                                     </div>`
                         // place in tag category on home page
                         aa = document.createElement("a")
-                        aa.href = `/article.html?${i}`
+                        aa.href = `/article/${i}`
                         aa.className = "story " + tag + "TAG"
                         console.log(tag)
                         aa.innerHTML = contents
@@ -39,7 +39,7 @@ async function getData() {
 
 
                         if (i >= titles.length - 2) {
-                            document.getElementById(`new${i - titles.length + 3}`).href = `/article.html?${i}`
+                            document.getElementById(`new${i - titles.length + 3}`).href = `/article/${i}`
                             document.getElementById(`new${i - titles.length + 3}`).innerHTML = contents
                         }
                     } catch (error) {}
