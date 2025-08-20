@@ -15,6 +15,7 @@ h1, h2 {
 	font-family: ClashGrotesk, sans-serif;
 	font-weight: bold;
 	color: inherit;
+	text-transform: uppercase;
 }
 .article > h1 > small {
 	font-style: italic;
