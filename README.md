@@ -1,8 +1,9 @@
 # Hwalgi
 Empowering student voices
 ## Technical Details
-Hwalgi was initially a personal blog, but as I worked on it, I found myself interested in a more curated public forum.  
-Much of the backend of this site is actually done through Google Forms and Google Sheets - the submission form is a reverse engineered Google Form endpoint that then places data in a spreadsheet with some controls for me to approve/disapprove essays and tag them before publishing to the site automatically.  
+Hwalgi's technical backend is messy, complicated, mildly exploitative of Cloudflare and Google services - but it's built that way becuase it keeps the cost of running Hwalgi at effectively 0.
+
+The submission is handled with a reverse-engineered Google Form that pushes results to a Google Sheets. The Google Sheets has a rather long AppScript attached to it to register DOI indices for each published article. The frontend is served on Cloudflare Pages (with some proxying magick from _redirects to make the on-load dynamically generated article pages indexable) and rendered with JS.
 ## Site
 Hwalgi is available at [https://hwalgi.williamck.org](https://hwalgi.williamck.org).
 ## License
