@@ -1,2 +1,1 @@
-/article/* /test.html 200
-/article/*/ /test.html 200
+/article/*   /test/:splat   200
