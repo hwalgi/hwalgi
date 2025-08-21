@@ -5,6 +5,6 @@ Hwalgi's technical backend is messy, complicated, mildly exploitative of Cloudfl
 
 The submission is handled with a reverse-engineered Google Form that pushes results to a Google Sheets. The Google Sheets has a rather long AppScript attached to it to register DOI indices for each published article. The frontend is served on Cloudflare Pages (with some proxying magick from _redirects to make the on-load dynamically generated article pages indexable) and rendered with JS.
 ## Site
-Hwalgi is available at [https://hwalgi.williamck.org](https://hwalgi.williamck.org).
+Hwalgi is available at [https://hwalgi.org](https://hwalgi.org).
 ## License
 This site and its contents retain `All Rights Reserved`. Using any of the materials available from or on this site is a copyright violation.
