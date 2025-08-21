@@ -21,7 +21,7 @@ async function getData(num) {
                 text = art.slice(art.split(",\"")[0].length + 2, art.length - tag.length - aut.length - 3).replaceAll("\"\"","\"")
                 text = text.substring(0, text.lastIndexOf("\""))
                 document.getElementById("tit").innerHTML = title
-                document.title = title.split("<br>")[0] + " | Hwalgi"
+                document.title = title.split("<br>")[0].toLocaleLowerCase() + " | Hwalgi"
                 document.getElementById("aut").innerText = aut
                 document.getElementById("cont").innerText = text
             })

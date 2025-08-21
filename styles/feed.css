@@ -118,6 +118,7 @@ a.story:hover {
 }
 .ad > a {
 	background-color: white;
+	border-radius: 100vmin;
 	color: var(--spec-orange);
 	padding: 10px;
 	box-sizing: border-box;
@@ -128,6 +129,7 @@ a.story:hover {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	font-weight: bold;
 }
 
 .story:has(.imprint) {
