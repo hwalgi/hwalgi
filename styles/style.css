@@ -247,15 +247,14 @@ video {
 	margin: 0;
 }
 #banner {
-	width: min(calc(100% - 20px), 600px);
+	width: min(calc(100% - 40px), 600px);
 	background-color: var(--spec-orange);
 	color: var(--spec-black);
 	font-weight: bold;
 	position: fixed;
 	left: 50%;
-	translate: -50% 0;
+	translate: -50% 20px;
 	top: 0;
-	margin: 10px;
 	border-radius: 100vmin;
 	padding: 10px;
 	padding-left: 50px;
