@@ -74,9 +74,6 @@ if (window.location.href.includes("article")) {
     } else {
         num = parseInt(window.location.href.split("?")[1])
     }
-    fetch("/articleBody.html").then(response => response.text()).then(html => {
-        document.body.innerHTML = html
-        loadComments()
-        getData(num)
-    })
+    loadComments()
+    getData(num)
 }
