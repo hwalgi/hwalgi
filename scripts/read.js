@@ -21,7 +21,7 @@ async function getData(num) {
                 text = art.slice(art.split(",\"")[0].length + 2, art.length - tag.length - aut.length - 3).replaceAll("\"\"","\"")
                 text = text.substring(0, text.lastIndexOf("\""))
                 document.getElementById("tit").innerHTML = title
-                document.getElementById("titleTag").innerText = title.split("\n")[0] + " | Hwalgi"
+                document.title = title.split("<br>")[0] + " | Hwalgi"
                 document.getElementById("aut").innerText = aut
                 document.getElementById("cont").innerText = text
             })
@@ -76,6 +76,7 @@ if (window.location.href.includes("article")) {
     }
     fetch("/articleBody.html").then(response => response.text()).then(html => {
         document.body.innerHTML = html
+        loadComments()
         getData(num)
     })
 }
