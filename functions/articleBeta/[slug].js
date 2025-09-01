@@ -18,7 +18,7 @@ export async function onRequest(context) {
   const resp = await fetch(`https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=1511671296&single=true&output=csv`);
   const data = await resp.text();
   const dois = await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=1370662873&single=true&output=csv")
-  const doiData = await dois.text();
+  const doiData = (await dois.text()).split("\n");
   
   let authors = data.split("\n").map(x => x.substring(x.lastIndexOf(",") + 1))
   let remaining = data.split("\n").map(x => x.substring(0, x.lastIndexOf(",")))
