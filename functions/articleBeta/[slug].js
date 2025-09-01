@@ -14,10 +14,11 @@ function getSplat(str) {
 
 export async function onRequest(context) {
   const { slug } = context.params;
-  console.log(slug)
 
   const resp = await fetch(`https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=1511671296&single=true&output=csv`);
   const data = await resp.text();
+  const doiresp = await fetch(`https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=1370662873&single=true&output=csv`);
+  const doidata = await doiresp.text();
   
   let authors = data.split("\n").map(x => x.substring(x.lastIndexOf(",") + 1))
   let remaining = data.split("\n").map(x => x.substring(0, x.lastIndexOf(",")))
@@ -63,8 +64,8 @@ export async function onRequest(context) {
         <div id="popup">
           <small>Hey there! My name is William, and I'm Hwalgi's main editor. We run Hwalgi <b>entirely for free, without invasive ads or monetization</b>. It's a project I've run in my free time, but it's also a project that's grown into more than a small effort. We receive <b>hundreds</b> of submissions, and right now we're selective not by choice, but because we can't provide editorial services to as many submissions as we'd like. If you've enjoyed reading on Hwalgi - or you want to support our initiative - please just take a moment to consider <a href="https://hcb.hackclub.com/donations/start/hwalgi">donating</a>.</small>
         </div>
-        <sub id="doi">doi loading...</sub>
-        <h1 id="tit">${titles[num]}</h1>
+        <sub id="doi">${doidata.split("\n")[num].trim()}</sub>
+        <h1 id="tit">${titles[num].slice(1, titles[num].length - 1).split("...").join("<br><small>(") + ")</small>"}</h1>
         <sub id="aut">${authors[num]}</sub>
         <p id="cont">contents (loading)...</p>
 
