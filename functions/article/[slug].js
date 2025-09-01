@@ -26,13 +26,15 @@ export async function onRequest(context) {
 
   let num = titles.map(x => getSplat(x)).indexOf(slug);
 
+  let tit = titles[num].slice(1, titles[num].length - 1).split("...")
+
   // Generate HTML that includes the slug
   const html = `
     <!DOCTYPE html>
     <html lang="en">
     <head>
       <meta charset="UTF-8" />
-      <title>${titles[num]} | Hwalgi</title>
+      <title>${tit.join(" (") + ")"} | Hwalgi</title>
       <meta name="viewport" content="width=device-width,initial-scale=1" />
       <meta name="description" content="Hwalgi is host to award-winning, unflinching, uncompromised opinions." />
       <link rel="stylesheet" type="text/css" href="/styles/style.css" />
@@ -65,7 +67,7 @@ export async function onRequest(context) {
           <small>Hey there! My name is William, and I'm Hwalgi's main editor. We run Hwalgi <b>entirely for free, without invasive ads or monetization</b>. It's a project I've run in my free time, but it's also a project that's grown into more than a small effort. We receive <b>hundreds</b> of submissions, and right now we're selective not by choice, but because we can't provide editorial services to as many submissions as we'd like. If you've enjoyed reading on Hwalgi - or you want to support our initiative - please just take a moment to consider <a href="https://hcb.hackclub.com/donations/start/hwalgi">donating</a>.</small>
         </div>
         <sub id="doi">${doidata.split("\n")[num].trim()}</sub>
-        <h1 id="tit">${titles[num].slice(1, titles[num].length - 1).split("...").join("<br><small>(") + ")</small>"}</h1>
+        <h1 id="tit">${tit.join("<br><small>(") + ")</small>"}</h1>
         <sub id="aut">${authors[num]}</sub>
         <p id="cont">contents (loading)...</p>
 
@@ -86,6 +88,9 @@ export async function onRequest(context) {
           </div>
         </div>
       </div>
+      <script src="/scripts/splat.js"></script>
+      <script src="/scripts/comments.js"></script>
+      <script src="/scripts/read.js"></script>
     </body>
     </html>
   `;
