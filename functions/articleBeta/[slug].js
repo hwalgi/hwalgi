@@ -1,5 +1,5 @@
 function getSplat(str) {
-    splat = str.replace(/[^a-zA-Z]/g, "_").toLowerCase();
+    let splat = str.replace(/[^a-zA-Z]/g, "_").toLowerCase();
     while (splat.includes("__")) {
         splat = splat.replaceAll("__", "_")
     }
