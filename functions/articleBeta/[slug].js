@@ -15,7 +15,7 @@ function getSplat(str) {
 export async function onRequest(context) {
   const { slug } = context.params;
 
-  const resp = await fetch(`https://api.example.com/articles/${slug}`);
+  const resp = await fetch(`https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=1511671296&single=true&output=csv`);
   const data = await resp.text();
   const dois = await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=1370662873&single=true&output=csv")
   const doiData = await dois.text();
