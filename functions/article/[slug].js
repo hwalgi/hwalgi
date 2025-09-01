@@ -34,7 +34,7 @@ export async function onRequest(context) {
     <html lang="en">
     <head>
       <meta charset="UTF-8" />
-      <title>${tit.join(" (") + ")"} | Hwalgi</title>
+      <title>${tit[0].toLocaleLowerCase()} | Hwalgi</title>
       <meta name="viewport" content="width=device-width,initial-scale=1" />
       <meta name="description" content="Hwalgi is host to award-winning, unflinching, uncompromised opinions." />
       <link rel="stylesheet" type="text/css" href="/styles/style.css" />
