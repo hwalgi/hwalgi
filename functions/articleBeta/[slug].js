@@ -13,7 +13,7 @@ function getSplat(str) {
 }
 
 export async function onRequest(context) {
-  const slug = context.params;
+  const { slug } = context.params;
   console.log(slug)
 
   const resp = await fetch(`https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=1511671296&single=true&output=csv`);
