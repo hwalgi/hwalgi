@@ -1,6 +1,11 @@
-async function getData(num) {
+function getTitle(art) {
+    return art.split(",\"")[0].split("...").map(x => x.trim()).map(x => x.startsWith("\"") ? x.slice(1,) : x).map(x => x.endsWith("\"") ? x.slice(0, -1) : x)
+}
+
+async function getData(spl) {
     const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=859842630&single=true&output=csv";
     let aut, tag, text, title
+    let num
     try {
         const response = await fetch(url);
         if (!response.ok) {
@@ -13,9 +18,11 @@ async function getData(num) {
                 // parse spreadsheet contents
                 let articles = data.split("\n").filter(x => (!x.startsWith(","))).splice(1).join("\n").split("(::)(::)").filter(y => y != "\r")
 
+                num = articles.map(x => getSplat(getTitle(x).join("\n"))).indexOf(spl)
+
                 // serve specific article
                 art = articles[num]
-                title = art.split(",\"")[0].split("...").map(x => x.trim()).map(x => x.startsWith("\"") ? x.slice(1,) : x).map(x => x.endsWith("\"") ? x.slice(0, -1) : x).join("<br><small>(") + ")</small>"
+                title = getTitle(art).join("<br><small>(") + ")</small>"
                 aut = art.split(",")[art.split(",").length - 3]
                 tag = art.split(",")[art.split(",").length - 2]
                 text = art.slice(art.split(",\"")[0].length + 2, art.length - tag.length - aut.length - 3).replaceAll("\"\"","\"")
@@ -67,13 +74,13 @@ async function getData(num) {
     }
 }
 if (window.location.href.includes("article")) {
-    let num
+    let splat
     if (window.location.href.includes("article/")) {
         let parts = window.location.href.split("/")
-        num = parseInt(parts[parts.length - 1])
+        splat = parts[parts.length - 1]
     } else {
-        num = parseInt(window.location.href.split("?")[1])
+        splat = window.location.href.split("?")[1]
     }
     loadComments()
-    getData(num)
+    getData(splat)
 }

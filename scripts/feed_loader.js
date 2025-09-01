@@ -29,7 +29,7 @@ async function getData() {
                                     </div>`
                         // place in tag category on home page
                         aa = document.createElement("a")
-                        aa.href = `/article/${i}`
+                        aa.href = `/article/${getSplat(title)}`
                         aa.className = "story " + tag + "TAG"
                         aa.innerHTML = contents
                         document.getElementById(tag + " Place").parentNode.insertBefore(aa, document.getElementById(tag + " Place"))
