@@ -1,25 +1,12 @@
-function getSplat(str) {
-    splat = str.replace(/[^a-zA-Z]/g, "_").toLowerCase();
-    while (splat.includes("__")) {
-        splat = splat.replaceAll("__", "_")
-    }
-    if (splat.startsWith("_")) {
-        splat = splat.slice(1,)
-    }
-    if (splat.endsWith("_")) {
-        splat = splat.slice(0, -1) 
-    }
-    return splat
-}
-
-export async function onRequest(context) {
-  const slug = context.params;
+async function onRequest(context) {
+  const slug = context
 
   const resp = await fetch(`https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=1511671296&single=true&output=csv`);
   const data = await resp.text();
   const dois = await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=1370662873&single=true&output=csv")
   const doiData = await dois.text();
   
+
   let authors = data.split("\n").map(x => x.substring(x.lastIndexOf(",") + 1))
   let remaining = data.split("\n").map(x => x.substring(0, x.lastIndexOf(",")))
   let titles = remaining.map(x => x.substring(0, x.lastIndexOf(",")))
@@ -94,7 +81,6 @@ export async function onRequest(context) {
     </html>
   `;
 
-  return new Response(html, {
-    headers: { "content-type": "text/html; charset=UTF-8" },
-  });
+return html
 }
+console.log(onRequest("social_awareness_about_education_for_we_cannot_allow_dreams_to_burn_anymore").then(x => console.log(x)))
