@@ -84,10 +84,9 @@ export async function onRequest(context) {
           </div>
         </div>
       </div>
-      <script src="/scripts/splat.js"></script>
-      <script src="/scripts/popup.js"></script>
-      <script src="/scripts/comments.js"></script>
-      <script src="/scripts/read.js"></script>
+      // <script src="/scripts/splat.js"></script>
+      // <script src="/scripts/comments.js"></script>
+      // <script src="/scripts/read.js"></script>
     </body>
     </html>
   `;
