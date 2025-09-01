@@ -26,7 +26,7 @@ export async function onRequest(context) {
 
   let num = titles.map(x => getSplat(x)).indexOf(slug);
 
-  let tit = titles[num].slice(1, titles[num].length - 1).split("...")
+  let tit = titles[num].split("...")
 
   // Generate HTML that includes the slug
   const html = `
