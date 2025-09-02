@@ -1,4 +1,4 @@
-function loadComments() {
+function loadComments(postNum) {
     document.getElementById('submissionForm').addEventListener('submit', function(event) {
         document.getElementById("commentID").value = window.location.href.split("?")[window.location.href.split("?").length - 1]
         event.preventDefault(); // Prevents the default form submission
@@ -23,11 +23,6 @@ function loadComments() {
 
     fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vRBLq2bMDXDUL2lzDZK_AtEdaEb7-hxhYarWduAI0cSqQGx65xpeaC6T6cgUj8cTDdkw-pKcxeKkTjj/pub?gid=1144327213&single=true&output=csv").then(x => x.text()).then(
         x => {
-            if (window.location.href.includes("article/")) {
-                postNum = `${window.location.href.split("/")[window.location.href.split("/").length - 1]},`
-            } else {
-                postNum = `${window.location.href.split("?")[window.location.href.split("?").length - 1]},`
-            }
             commentsRaw = x.split("\n").filter(x => x.startsWith(postNum)).map(x => x.slice(postNum.length)).filter(x => !x.startsWith(",#N/A")).map(x => [x.slice(0, x.length - ("hwalgi" + x.split(",hwalgi")[x.split(",hwalgi").length - 1]).length - 1), "hwalgi" + x.split(",hwalgi")[x.split(",hwalgi").length - 1].trim().replace(",","")])
             document.getElementById("comments").innerHTML = ""
             for (comment of commentsRaw.reverse()) {

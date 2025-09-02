@@ -72,6 +72,9 @@ async function getData(spl) {
     } catch (error) {
         console.error(error.message);
     }
+
+    
+    loadComments(num)
 }
 if (window.location.href.includes("article")) {
     let splat
@@ -81,6 +84,5 @@ if (window.location.href.includes("article")) {
     } else {
         splat = window.location.href.split("?")[1]
     }
-    loadComments()
     getData(splat)
 }
