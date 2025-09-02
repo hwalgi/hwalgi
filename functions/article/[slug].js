@@ -100,7 +100,7 @@ export async function onRequest(context) {
       headers: { "content-type": "text/html; charset=UTF-8" },
     });
   } catch (error) {
-    const htmlResponse = await fetch("/404.html");
+    const htmlResponse = await fetch("https://www.hwalgi.org/404.html");
 
     const htmlText = await htmlResponse.text();
 
