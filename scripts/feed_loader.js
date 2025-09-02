@@ -38,7 +38,7 @@ async function getData() {
 
 
                         if (i >= titles.length - 2) {
-                            document.getElementById(`new${i - titles.length + 3}`).href = `/article/${i}`
+                            document.getElementById(`new${i - titles.length + 3}`).href = `/article/${getSplat(title)}`
                             document.getElementById(`new${i - titles.length + 3}`).innerHTML = contents
                         }
                     } catch (error) {}
