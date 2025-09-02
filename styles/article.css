@@ -35,8 +35,12 @@ h1, h2 {
 	margin-bottom: 10px;
 	padding: 10px;
 }
-.comment > sub {
+.comment > small:nth-child(1) {
 	color: var(--spec-orange);
+	margin-right: 5px;
+}
+.comment > small {
+	margin-bottom: 10px;
 }
 
 .date {
