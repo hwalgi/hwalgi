@@ -100,8 +100,7 @@ export async function onRequest(context) {
       headers: { "content-type": "text/html; charset=UTF-8" },
     });
   } catch (error) {
-    const htmlFileUrl = new URL("/404.html", import.meta.url);
-    const htmlResponse = await fetch(htmlFileUrl);
+    const htmlResponse = await fetch("/404.html");
 
     const htmlText = await htmlResponse.text();
 
