@@ -34,9 +34,11 @@ body {
 h1, h2 {
 	text-transform: uppercase;
 	color: var(--spec-orange);
+	font-weight: 600;
 }
 h3 {
 	text-transform: lowercase;
+	font-weight: 600;
 }
 
 .title {
@@ -101,11 +103,11 @@ h3 {
 .navbar > a.active {
 	background-color: white;
 	color: var(--spec-orange);
-	font-weight: bold;
+	font-weight: 600;
 }
 .navbar > a:hover {
 	border: solid var(--spec-black);
-	font-weight: bold;
+	font-weight: 600;
 }
 .navbar > a.active:hover {
 	border: solid white;
@@ -250,7 +252,7 @@ video {
 	width: min(calc(100% - 40px), 600px);
 	background-color: var(--spec-orange);
 	color: var(--spec-black);
-	font-weight: bold;
+	font-weight: 500;
 	position: fixed;
 	left: 50%;
 	translate: -50% 20px;

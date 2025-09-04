@@ -76,7 +76,7 @@ a.story:hover {
 }
 .tags > .tagSelected:hover, .tags > button:hover, .tags > button:active {
 	rotate: -2deg;
-	font-weight: bold;
+	font-weight: 600;
 }
 .tags > button:active {
 	opacity: 0.3;
@@ -129,7 +129,7 @@ a.story:hover {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-weight: bold;
+	font-weight: 600;
 }
 
 .story:has(.imprint) {
