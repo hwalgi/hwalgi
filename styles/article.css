@@ -28,7 +28,10 @@ h1, h2 {
 	line-height: 1.7em;
 }
 #cont * {
-	font-family: inherit !important;
+	font-family: inherit !important;;
+}
+#cont a {
+	color: var(--spec-orange) !important;
 }
 
 .comment {
@@ -85,11 +88,4 @@ h1, h2 {
 #popup > * > a {
 	color: var(--spec-orange);
 	text-decoration: underline;
-}
-
-/* Target elements with inline or stylesheet black text */
-*[style*="color: black"],
-*[style*="color:#000"],
-*[style*="color:#000000"] {
-  color: white !important;
 }

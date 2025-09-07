@@ -12,7 +12,7 @@ def update_html_files(directory):
 
     for root, _, files in os.walk(directory):
         for file in files:
-            if file.endswith(".html"):
+            if file.endswith(".html") or file.endswith("[slug].js"):
                 file_path = os.path.join(root, file)
 
                 # Read file content
