@@ -27,6 +27,10 @@ h1, h2 {
 #cont {
 	line-height: 1.7em;
 }
+#cont * {
+	font-family: inherit !important;
+	line-height: 1.7em !important;
+}
 
 .comment {
 	background-color: rgba(0, 0, 0, 0.3);
