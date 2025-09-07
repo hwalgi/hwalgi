@@ -68,32 +68,32 @@
         <p>Citing a source does not mean you can plagiarize from it. While all sources must be cited, a citation does not excuse blatant theft of intellectual property.</p>
         <br>
         <h2 id="subForm">Submission Form</h2>
-        <form class="form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfQHvRNYlPBdWp3bI4FY5BlSGBovsynhuwuzMSwemeGoerrmg/formResponse" id="submissionForm">
+        <div class="form" id="submissionForm">
 
             <label for="name">Name *</label>
-            <input name="entry.1594192402" type="text" id="name" placeholder="First Last" required/>
+            <input type="text" id="name" placeholder="First Last" required/>
   
             <label for="email">Email *</label>
-            <input name="entry.1880093296" type="email" id="email" placeholder="email@address.com" required />
+            <input type="email" id="email" placeholder="email@address.com" required />
             
-            <label for="email">School Name *</label>
-            <input name="entry.240437314" type="text" id="email" placeholder="Middle/High School Name" required />
+            <label for="school">School Name *</label>
+            <input type="text" id="school" placeholder="Middle/High School Name" required />
 
             <label for="hours">Number of hours spent *</label>
-            <input name="entry.1237476617" type="number" id="hours" placeholder="_._" step="any" required/>
+            <input type="number" id="hours" placeholder="_._" step="any" required/>
 
-            <label for="hours">Topic *</label>
-            <input name="entry.1118448734" type="text" id="hours" placeholder="big idea (Harry Potter)" required/>
+            <label for="topic">Topic *</label>
+            <input type="text" id="topic" placeholder="big idea (Harry Potter)" required/>
 
-            <label for="hours">Subtitle *</label>
-            <input name="entry.1554651532" type="text" id="hours" placeholder="catchy tagline (and the Sorcerer's Stone)" required/>
+            <label for="subtitle">Subtitle *</label>
+            <input type="text" id="subtitle" placeholder="catchy tagline (and the Sorcerer's Stone)" required/>
 
             <label for="text">Essay Manuscript *</label>
-            <textarea name="entry.1817590422" type="text" id="text" placeholder="Enter your essay here. Styling like bolding and italicization is not supported." required></textarea>
+            <div type="text" id="text" contenteditable="true" required></div>
   
   
-            <input type="submit" value="Send" />
-      </form>
+            <button onclick="submitForm()">Submit</button>
+        </div>
       <p id="message" hidden></p>
     </div>
 	<script src="scripts/app.js"></script>

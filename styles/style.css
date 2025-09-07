@@ -67,12 +67,14 @@ h3 {
 #title > .letter {
 	display: inline-block;
 	transition: translate 2s;
+	min-width: 15px;
 }
 
 #sub {
 	color: white;
 	opacity: 0;
 	transition: 1s;
+	text-align: center;
 }
 
 .navbar {
@@ -130,32 +132,47 @@ b {
 	color: white;
 }
 
-form {
+.form {
 	display: flex;
 	flex-direction: column;
 	text-align: left;
 }
 
-input, textarea {
-	border-radius: 10px;
+input, #text {
+	/* border-radius: 5px; */
 	border: none;
 	font-family: inherit;
 	font-size: inherit;
 	margin-bottom: 20px;
 	margin-top: 10px;
 	padding: 10px;
+	background-color: white;
+	color: black;
+	border-radius: 10px 0 0 10px;
+	border-right: solid 3px var(--spec-orange);
 }
 
-textarea {
-	height: 100px;
+#text {
+	min-height: 100px;
+	max-height: 400px;
+	overflow-y: scroll;
+	color: black !important;
+}
+#text * {
+	font-family: inherit !important;
+}
+#text b {
+	color: black;
 }
 
-input[type="submit"] {
+.form  > button {
 	background-color: var(--spec-orange);
 	border-radius: 100vmin;
 	border: none;
 	color: white;
 	padding: 10px;
+	font-size: inherit;
+	font-family: inherit;
 }
 
 #bgCont {
@@ -281,4 +298,20 @@ video {
 	border-radius: 100vmin;
 	top: 50%;
 	translate: 0 -50%;
+}
+
+/* WebKit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: inherit;
+  border-radius: 0 10px 10px 0;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--spec-orange);
 }

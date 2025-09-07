@@ -30,7 +30,7 @@ async function getData(spl) {
                 document.getElementById("tit").innerHTML = title
                 document.title = title.split("<br>")[0].toLocaleLowerCase() + " | Hwalgi"
                 document.getElementById("aut").innerText = aut
-                document.getElementById("cont").innerText = text
+                document.getElementById("cont").innerHTML = text
             })
     } catch (error) {
         console.error(error.message);
