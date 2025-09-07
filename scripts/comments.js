@@ -1,6 +1,6 @@
 function loadComments(num) {
     document.getElementById('submissionForm').addEventListener('submit', function(event) {
-        document.getElementById("commentID").value = window.location.href.split("?")[window.location.href.split("?").length - 1]
+        document.getElementById("commentID").value = num
         event.preventDefault(); // Prevents the default form submission
         
         const formData = new FormData(this);

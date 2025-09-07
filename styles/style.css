@@ -139,7 +139,6 @@ b {
 }
 
 input, #text {
-	/* border-radius: 5px; */
 	border: none;
 	font-family: inherit;
 	font-size: inherit;
@@ -165,7 +164,7 @@ input, #text {
 	color: black;
 }
 
-.form  > button {
+.form  > button, input[type="submit"] {
 	background-color: var(--spec-orange);
 	border-radius: 100vmin;
 	border: none;

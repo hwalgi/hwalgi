@@ -29,7 +29,6 @@ h1, h2 {
 }
 #cont * {
 	font-family: inherit !important;
-	line-height: 1.7em !important;
 }
 
 .comment {
