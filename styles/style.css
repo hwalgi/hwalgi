@@ -322,13 +322,11 @@ video {
 	border-radius: 100vmin;
 	padding: 10px;
 	padding-left: 50px;
+	padding-right: 20px;
 	box-sizing: border-box;
 	z-index: 2;
 	text-align: center;
 	transition: 0.5s;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 #banner::before {
 	content: "!";
@@ -343,6 +341,10 @@ video {
 	border-radius: 100vmin;
 	top: 50%;
 	translate: 0 -50%;
+}
+#banner > a {
+	color: white;
+	display: inline;
 }
 
 /* WebKit (Chrome, Edge, Safari) */

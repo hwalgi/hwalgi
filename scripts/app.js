@@ -2,7 +2,7 @@
 window.addEventListener("load", () => {
     document.body.innerHTML += `
 	<div id="banner">
-		Please clear your cache if Hwalgi is not loading properly.
+		We're fundraising for the first time! Hwalgi will <i>always</i> be free - if you'd like to support us, please <a href="https://hcb.hackclub.com/donations/start/hwalgi">donate here.</a>
 	</div>
     `
     setInterval(() => {
