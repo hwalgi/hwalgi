@@ -101,6 +101,7 @@ h3 {
 	text-align: center;
 	transition: 0.2s;
 	font-weight: normal;
+	color: white;
 }
 .navbar > a.active {
 	background-color: white;
@@ -138,7 +139,7 @@ b {
 	text-align: left;
 }
 
-input, #text {
+input, #text, .checkbox {
 	border: none;
 	font-family: inherit;
 	font-size: inherit;
@@ -172,6 +173,39 @@ input, #text {
 	padding: 10px;
 	font-size: inherit;
 	font-family: inherit;
+}
+
+input[type="checkbox"] {
+	visibility: hidden;/* <-- Hide the default checkbox. The rest is to hide and allow tabbing, which display:none prevents */
+	display: block;
+	height: 0;
+	width: 0;
+	position: absolute;
+	overflow: hidden;
+}
+.checkbox {
+	padding: 10px;
+}
+.checkbox span {/* <-- Style the artificial checkbox */
+  height: 20px;
+  width: 20px;
+  aspect-ratio: 1/1;
+  border: none;
+  background-color: white;
+  border: solid 1px var(--spec-orange);
+  position: relative;
+  display: inline-block;
+  margin-top: 15px;
+}
+input[type="checkbox"]:checked + span::after {/* <-- Style its checked state */
+	content: "✓";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--spec-orange);
 }
 
 #bgCont {
@@ -210,7 +244,7 @@ input, #text {
 }
 
 a {
-	color: white;
+	color: var(--spec-orange);
 	text-decoration: none;
 }
 

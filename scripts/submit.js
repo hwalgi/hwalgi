@@ -17,6 +17,10 @@ function submitForm() {
 }
 
 function submitInner() {
+    if (document.getElementById("agree").checked == false) {
+        alert("You must agree to the terms before submitting.")
+        return
+    }
     good = true
     const formData = new FormData();
     for (el of [...document.getElementById("submissionForm").children].filter(e => Object.keys(formAttributes).includes(e.id))) {
