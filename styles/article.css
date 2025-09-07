@@ -86,3 +86,10 @@ h1, h2 {
 	color: var(--spec-orange);
 	text-decoration: underline;
 }
+
+/* Target elements with inline or stylesheet black text */
+*[style*="color: black"],
+*[style*="color:#000"],
+*[style*="color:#000000"] {
+  color: white !important;
+}

@@ -69,6 +69,9 @@ h3 {
 	transition: translate 2s;
 	min-width: 15px;
 }
+.title > sub {
+	text-align: center;
+}
 
 #sub {
 	color: white;
