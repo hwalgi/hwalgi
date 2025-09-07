@@ -16,7 +16,7 @@ intervalID = setInterval(() => {
                 document.getElementById("sub").innerText = "Come back in 5-10 minutes. You don't need to keep this page open, but keep it bookmarked so you can check if your submission goes through."
             } else {
                 document.getElementById("title").innerText = "Oh no!"
-                document.getElementById("sub").innerText = "Your submission didn't go through. We might be having issues with our form - email us your writing at <a href=\"mailto:contact@hwalgi.org\">contact@hwalgi.org</a>."
+                document.getElementById("sub").innerHTML = "Your submission didn't go through. We might be having issues with our form - email us your writing at <a href=\"mailto:contact@hwalgi.org\">contact@hwalgi.org</a>."
             }
             
         }
