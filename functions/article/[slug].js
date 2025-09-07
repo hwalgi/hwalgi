@@ -83,6 +83,7 @@ export async function onRequest(context) {
               <input name="entry.227513125" type="text" id="name" placeholder="Enter your comment here" required/>
               <input type="submit" value="Post" />
             </form>
+            <sub>There may be a delay between posting comments and the comment appearing.</sub>
             <h3>Posted Comments</h3>
             <div id="comments">
               Loading...
