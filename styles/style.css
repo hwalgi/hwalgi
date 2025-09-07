@@ -184,28 +184,40 @@ input[type="checkbox"] {
 	overflow: hidden;
 }
 .checkbox {
-	padding: 10px;
+	padding: 15px;
+	box-sizing: border-box;
+	font-size: 15px;
+	display: flex;
+	align-items: center;
 }
 .checkbox span {/* <-- Style the artificial checkbox */
-  height: 20px;
-  width: 20px;
-  aspect-ratio: 1/1;
+  min-height: 25px;
+  min-width: 25px;
+  max-height: 30px;
+  max-width: 30px;
+  border-radius: 100vmin;
   border: none;
   background-color: white;
   border: solid 1px var(--spec-orange);
   position: relative;
   display: inline-block;
-  margin-top: 15px;
+  overflow: auto;
+  margin-left: 20px;
 }
 input[type="checkbox"]:checked + span::after {/* <-- Style its checked state */
-	content: "✓";
-	width: 100%;
-	height: 100%;
+	content: "";
+	font-size: 10px;
+	width: 90%;
+	height: 90%;
 	position: absolute;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	color: var(--spec-orange);
+	background-color: var(--spec-orange);
+	border-radius: 100vmin;
+	translate: -50% -50%;
+	top: 50%;
+	left: 50%;
 }
 
 #bgCont {
