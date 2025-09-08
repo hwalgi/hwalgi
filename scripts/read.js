@@ -30,7 +30,12 @@ async function getData(spl) {
                 document.getElementById("tit").innerHTML = title
                 document.title = title.split("<br>")[0].toLocaleLowerCase() + " | Hwalgi"
                 document.getElementById("aut").innerText = aut
-                document.getElementById("cont").innerHTML = text.replaceAll("color: rgb(0, 0, 0);", "")
+                if (num < 21) {
+                    // legacy non-rich text
+                    document.getElementById("cont").innerText = text.replaceAll("color: rgb(0, 0, 0);", "")
+                } else {
+                   document.getElementById("cont").innerHTML = text.replaceAll("color: rgb(0, 0, 0);", "")
+                }
             })
     } catch (error) {
         console.error(error.message);
