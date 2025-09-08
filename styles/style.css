@@ -302,10 +302,18 @@ video {
 	max-width: 150px;
 	filter: drop-shadow(0 0 10px var(--spec-black));
 }
+.pfpOuter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
 .profiles {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	min-width: 90vw;
+	flex-wrap: wrap;
 }
 .profile > h3 {
 	margin-bottom: 0;
