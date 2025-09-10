@@ -21,9 +21,9 @@ export async function onRequest(context) {
     const doiresp = await fetch(`https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=1370662873&single=true&output=csv&random=${Date.now()}`);
     const doidata = await doiresp.text();
     
-    let authors = data.split("\n").map(x => x.substring(x.lastIndexOf(",") + 1))
-    let remaining = data.split("\n").map(x => x.substring(0, x.lastIndexOf(",")))
-    let titles = remaining.map(x => x.substring(0, x.lastIndexOf(",")))
+    let rows = data.split("\n").map(x => x.split(","))
+    let authors = rows.map(x => x[x.length - 2].trim())
+    let titles = rows.map(x => x.slice(0, x.length - 3).join(",").trim())
 
     let num = titles.map(x => getSplat(x)).indexOf(slug);
 

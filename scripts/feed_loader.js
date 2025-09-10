@@ -9,19 +9,22 @@ async function getData() {
         // get spreadsheet contents
         response.text().then(
             (data) => {
-                let authors = data.split("\n").map(x => x.substring(x.lastIndexOf(",") + 1))
-                let remaining = data.split("\n").map(x => x.substring(0, x.lastIndexOf(",")))
-                let titles = remaining.map(x => x.substring(0, x.lastIndexOf(",")))
-                let tags = remaining.map(x => x.substring(x.lastIndexOf(",") + 1))
-                titles = titles.map(x => x.trim()).map(x => x.startsWith("\"") ? x.slice(1,) : x).map(x => x.endsWith("\"") ? x.slice(0, -1) : x)
+                let rows = data.split("\n").map(x => x.split(","))
+                let authors = rows.map(x => x[x.length - 2].trim())
+                let titles = rows.map(x => x.slice(0, x.length - 3).join(",").trim())
+                let tags = rows.map(x => x[x.length - 3].trim())
+
+                titles = titles.map(x => x.startsWith("\"") ? x.slice(1,) : x).map(x => x.endsWith("\"") ? x.slice(0, -1) : x)
 
                 let replaced = []
                 let tagList = []
+
                 for (let i = titles.length - 1; i >= 0; i--) {
                     try {
                         let title = titles[i]
                         let aut = authors[i]
                         let tag = tags[i]
+
                         let contents = `${title.split("...")[0].trim()}
                                     <sub>${title.split("...")[1].trim()}</sub>
                                     <div class="author">
@@ -36,12 +39,13 @@ async function getData() {
                         replaced.push(tag + " Place")
                         tagList.push(tag)
 
-
                         if (i >= titles.length - 2) {
                             document.getElementById(`new${i - titles.length + 3}`).href = `/article/${getSplat(title)}`
                             document.getElementById(`new${i - titles.length + 3}`).innerHTML = contents
                         }
-                    } catch (error) {}
+                    } catch (error) {
+                        console.log(error)
+                    }
                 }
 
                 // remove loading placeholders
