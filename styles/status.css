@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
+
+#certificate {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    background-color: white;
+    text-align: center;
+    width: 88vmin;
+    height: 66vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    flex-direction: column;
+    transition: 0.2s;
+}
+#certificate * {
+    color: black;
+    margin: 1vmin;
+    font-size: 4vmin;
+}
+#certificate u {
+    font-style: italic;
+    font-family: "Mea Culpa", cursive;
+    border-bottom: solid 1px;
+    text-decoration: none;
+}
+#certificate sub {
+    font-size: 2vmin;
+}
+#certificate p {
+    font-style: italic;
+    font-size: 3vmin;
+}
+#certificate small {
+    font-size: 1.5vmin;
+}
+#certificate button, .title button {
+    color: var(--spec-orange);
+    border: none;
+    font-family: inherit;
+    font-size: 15px;
+    text-transform: lowercase;
+    background-color: transparent;
+    text-decoration: underline;
+    transition: 0.2s;
+}
+#certificate button:hover,  .title button:hover {
+    scale: 1.3;
+}
+.hiddenCertif {
+    scale: 0;
+}
+@media print {
+    #certificate {
+        z-index: 3;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        translate: 0 0;
+    }
+    #disclaimer, #certificate button {
+        scale: 0;
+        height: 0;
+        opacity: 0;
+        width: ;
+    }
+}

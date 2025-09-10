@@ -7,6 +7,7 @@
     overflow: hidden;
     scale: 0;
     transition: 0.2s;
+    z-index: -1;
 }
 
 .confetti {

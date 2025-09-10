@@ -1,12 +1,56 @@
+showCertif = () => {
+    document.getElementById("certificate").classList.remove("hiddenCertif")
+}
+hideCertif = () => {
+    document.getElementById("certificate").classList.add("hiddenCertif")
+}
 
-id = window.location.href.split("?")[1]
+id = window.location.href.split("?")[1].trim()
 intervalID = setInterval(() => {
     fetch(`https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=1725594247&single=true&output=csv&random=${Date.now()}`).then(r => r.text()).then(t => {
         if (t.includes(id)) {
-            document.getElementById("title").innerText = "Success!"
-            document.getElementById("sub").innerText = "Your submission has been received. We'll be in touch soon!"
+            fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=1511671296&single=true&output=csv").then(r => r.text()).then(d => {
+                rows = d.split("\n")
+                splats = rows.map(x => getSplat(x.split(",")[0].trim()))
+                authors = rows.map(x => x.split(",")[2].trim())
+                ids = rows.map(x => x.split(",")[x.split(",").length - 1].trim())
+                if (ids.includes(id)) {
+                    ind = ids.indexOf(id)
+                    document.getElementById("title").innerText = "Congrats!"
+                    document.getElementById("sub").innerHTML = `Your submission has been accepted and published. You can view it live at <a href="https://www.hwalgi.org/article/${splats[ind]}">here</a>.`
+
+                    document.getElementById("conf").style.scale = 1
+                    fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=1228636917&single=true&output=csv").then(r => r.text()).then(p => {
+                        rows = p.split("\n").map(x => x.replaceAll(",", "").trim()).filter(x => x.length > 0)
+                console.log(rows)
+                        ids = rows.map(x => x.split("*")[0].trim())
+                        hours = rows.map(x => parseFloat(x.split("*")[1].trim()))
+
+                        document.getElementById("name").innerText = authors[ind]
+                        document.getElementById("hours").innerText = `${hours[ids.indexOf(id)]} hours`
+                        document.getElementById("titleCont").innerHTML += `<button onclick="showCertif()">Show hours certificate</button>`
+                    })
+                } else {
+                    fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=1228636917&single=true&output=csv").then(r => r.text()).then(p => {
+                        rows = p.split("\n").map(x => x.replaceAll(",", "").trim()).filter(x => x.length > 0)
+                        ids = rows.map(x => x.split("*")[0].trim())
+                        auts = rows.map(x => x.split("*")[2].trim())
+                        hours = rows.map(x => parseFloat(x.split("*")[1].trim()))
+                        if (ids.includes(id)) {
+                            document.getElementById("title").innerText = "Rejected"
+                            document.getElementById("sub").innerText = "Thank you for your submission. At this time, Hwalgi is not ready to provide publication to your piece. We encourage you to submit again in the future. We have awarded half of your claimed hours to acknowledge your time and consideration."
+
+                            document.getElementById("name").innerText = auts[ids.indexOf(id)]
+                            document.getElementById("hours").innerText = `${hours[ids.indexOf(id)]} hours`
+                            document.getElementById("titleCont").innerHTML += `<button onclick="showCertif()">Show hours certificate</button>`
+                        } else {
+                            document.getElementById("title").innerText = "Submitted"
+                            document.getElementById("sub").innerText = "Your submission is currently under review. You can check this page to see if your submission has been accepted or rejected. The review process usually takes up to a week, but can be extended in times of high submission volume."
+                        }
+                    })
+                }
+            })
             clearInterval(intervalID)
-            document.getElementById("conf").style.scale = 1
         } else {
             submissionTime = parseInt(id.split("-")[0])
             currentTime = Date.now()
@@ -22,3 +66,5 @@ intervalID = setInterval(() => {
         }
     })
 }, 5000)
+
+// https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=1228636917&single=true&output=csv
