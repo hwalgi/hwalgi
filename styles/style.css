@@ -10,7 +10,7 @@
 
 :root {
 	--spec-black: rgb(14, 14, 14);
-	--spec-orange:rgb(209, 67, 15);
+	--spec-orange:rgb(209, 67, 15) /* IN PRINT AND MEDIA, #FF4400 */;
 }
 
 body {
