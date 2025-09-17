@@ -32,9 +32,9 @@ async function getData(spl) {
                 document.getElementById("aut").innerText = aut
                 if (num < 21) {
                     // legacy non-rich text
-                    document.getElementById("cont").innerText = text.replaceAll("color: rgb(0, 0, 0);", "")
+                    document.getElementById("cont").innerText = text
                 } else {
-                   document.getElementById("cont").innerHTML = text.replaceAll("color: rgb(0, 0, 0);", "")
+                   document.getElementById("cont").innerHTML = sanitizeText(text)
                 }
             })
     } catch (error) {
