@@ -89,3 +89,10 @@ h1, h2 {
 	color: var(--spec-orange);
 	text-decoration: underline;
 }
+
+#reviewerSub::before {
+	content: "(";
+}
+#reviewerSub::after {
+	content: ")";
+}

@@ -36,8 +36,7 @@ export async function onRequest(context) {
     const response = await fetch(url);
     const data = await response.text()
     
-    let remaining = data.split("\n").map(x => x.substring(0, x.lastIndexOf(",")))
-    let titles = remaining.map(x => x.substring(0, x.lastIndexOf(",")))
+    let titles = data.split("\n").map(x => x.trim().split(",")[0].trim())
     for (let title of titles) {
         xml += `<url>
     <loc>https://www.hwalgi.org/article/${getSplat(title)}</loc>
