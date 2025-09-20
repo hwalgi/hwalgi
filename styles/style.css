@@ -373,3 +373,24 @@ video {
 ::-webkit-scrollbar-thumb {
 	background-color: var(--spec-orange);
 }
+
+.stickyBtn {
+	position: fixed;
+	top: 10px;
+	right: 0;
+	background-color: var(--spec-black);
+	border: none;
+	font-size: inherit;
+	font-family: inherit;
+	border-radius: 100vmin 0 0 100vmin;
+	padding: 10px;
+	transition: 0.2s;
+	border: solid 2px var(--spec-orange);
+	border-right: none;
+	color: white;
+}
+.stickyBtn:hover {
+	padding-right: 30px;
+	background-color: var(--spec-orange);
+	color: var(--spec-black);
+}
