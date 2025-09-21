@@ -7,22 +7,25 @@ hideCertif = () => {
 
 id = window.location.href.split("?")[1].trim()
 intervalID = setInterval(() => {
-    fetch(`https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=1725594247&single=true&output=csv&random=${Date.now()}`).then(r => r.text()).then(t => {
-        if (t.includes(id)) {
+    fetch(`https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=58679177&single=true&output=csv&random=${Date.now()}`).then(r => r.text()).then(t => {
+        allT = t.split("\n").map(x => x.split(","))
+        console.log(allT)
+        allIDs = allT.map(x => x[0])
+        allStatus = allT.map(x => x[1].trim())
+        if (allIDs.includes(id)) {
             fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=1511671296&single=true&output=csv").then(r => r.text()).then(d => {
                 rows = d.split("\n")
                 splats = rows.map(x => getSplat(x.split(",")[0].trim()))
                 authors = rows.map(x => x.split(",")[2].trim())
-                ids = rows.map(x => x.split(",")[x.split(",").length - 1].trim())
-                if (ids.includes(id)) {
-                    ind = ids.indexOf(id)
+                if (allStatus[allIDs.indexOf(id)] == "TRUE") {
+                    ind = allIDs.filter((x,i)=>allStatus[i]=="TRUE").indexOf(id)
+                    console.log(allIDs.filter((x,i)=>allStatus[i]=="TRUE"))
                     document.getElementById("title").innerText = "Congrats!"
                     document.getElementById("sub").innerHTML = `Your submission has been accepted and published. You can view it live at <a href="https://www.hwalgi.org/article/${splats[ind]}">here</a>.`
 
                     document.getElementById("conf").style.scale = 1
                     fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=1228636917&single=true&output=csv").then(r => r.text()).then(p => {
                         rows = p.split("\n").map(x => x.replaceAll(",", "").trim()).filter(x => x.length > 0)
-                console.log(rows)
                         ids = rows.map(x => x.split("*")[0].trim())
                         hours = rows.map(x => parseFloat(x.split("*")[1].trim()))
 
@@ -65,6 +68,6 @@ intervalID = setInterval(() => {
             
         }
     })
-}, 5000)
+}, 1000)
 
 // https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=1228636917&single=true&output=csv

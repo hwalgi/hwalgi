@@ -24,14 +24,37 @@
         <meta property="twitter:image" content="https://www.hwalgi.org/assets/images/thumbnail.png" />
       </head>
       <body>
-
+        <div class="reviewerForm hiddenRF" id="rf">
+            <label for="approve">Review Verdict</label>
+            <select id="approve">
+                <option value="approve">Approve</option>
+                <option value="reject">Reject</option>
+                <option value="spam">Spam</option>
+            </select>
+            <label for="tag">Tag</label>
+            <select id="tag">
+                <option value="Politics">Politics</option>
+                <option value="Science">Science</option>
+                <option value="Theoretical">Theoretical</option>
+                <option value="Ethics">Ethics</option>
+                <option value="Energy">Energy</option>
+                <option value="Environmental">Environmental</option>
+                <option value="Social">Social</option>
+            </select>
+            <label for="pwd">Reviewer Password</label>
+            <input id="pwd" type="password">
+            <div class="btnGroup">
+                <button onclick="completeReview()">Finish</button>
+                <button onclick="closeRF()">Cancel</button>
+            </div>
+        </div>
         <div class="article">
           <sub id="doi">FOR REVIEWER USE ONLY</sub>
           <h1 id="tit">PREVIEW</h1>
           <sub id="aut">PREVIEW</sub>
           <p id="cont" contenteditable="true" oninput="updateArea()"></p>
         </div>
-        <button class="stickyBtn">Finish Review</button>
+        <button class="stickyBtn" onclick="finishReview()">Finish Review</button>
         <script src="/scripts/sanitizeText.js?v=1758412621"></script>
         <script src="/scripts/preview.js?v=1758412621"></script>
       </body>

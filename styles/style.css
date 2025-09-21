@@ -168,7 +168,7 @@ input, #text, .checkbox {
 	color: black;
 }
 
-.form  > button, input[type="submit"] {
+.form  > button, input[type="submit"], .btnGroup > button {
 	background-color: var(--spec-orange);
 	border-radius: 100vmin;
 	border: none;
@@ -393,4 +393,63 @@ video {
 	padding-right: 30px;
 	background-color: var(--spec-orange);
 	color: var(--spec-black);
+}
+
+.reviewerForm {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	width: 90vw;
+	height: 90vh;
+	max-width: 500px;
+	max-height: fit-content;
+	translate: -50% -50%;
+	background-color: var(--spec-black);
+	border-radius: 15px;
+	z-index: 4;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding: 15px;
+	box-sizing: border-box;
+	background-color: white;
+	box-shadow: 0 0 10px black;
+	border-right: solid 3px var(--spec-orange);
+	border-bottom: solid 3px var(--spec-orange);
+	transition: 0.2s;
+}
+.reviewerForm * {
+	color: black;
+}
+.reviewerForm > select, .reviewerForm > input {
+	border: solid 1px var(--spec-black);
+	padding: 10px;
+	margin: 10px 0;
+	border-radius: 0 10px 10px 0;
+	font-size: inherit;
+	font-family: inherit;
+	border-left: solid 3px var(--spec-orange);
+}
+
+.hiddenRF {
+	scale: 0;
+	width: 0;
+	height: 0;
+}
+
+.btnGroup {
+	display: flex;
+	width: 100%;
+}
+.btnGroup > button {
+	flex: 1;
+	margin: 5px;
+	box-sizing: border-box;
+	transition: 0.2s;
+}
+.btnGroup > button:hover {
+	background-color: var(--spec-black);
+}
+.btnGroup > button:active {
+	scale: 0.9;
 }

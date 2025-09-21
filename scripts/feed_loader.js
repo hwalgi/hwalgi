@@ -10,9 +10,10 @@ async function getData() {
         response.text().then(
             (data) => {
                 let rows = data.split("\n").map(x => x.split(","))
+                console.log(rows)
                 let authors = rows.map(x => x[x.length - 2].trim())
-                let titles = rows.map(x => x.slice(0, x.length - 3).join(",").trim())
-                let tags = rows.map(x => x[x.length - 3].trim())
+                let titles = rows.map(x => x.slice(0, x.length - 2).join(",").trim())
+                let tags = rows.map(x => x[x.length-1].trim())
 
                 titles = titles.map(x => x.startsWith("\"") ? x.slice(1,) : x).map(x => x.endsWith("\"") ? x.slice(0, -1) : x)
 
