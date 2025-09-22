@@ -38,8 +38,8 @@ export async function onRequest(context) {
         <title>${tit[0].toLocaleLowerCase()} | Hwalgi</title>
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <meta name="description" content="Hwalgi is host to award-winning, unflinching, uncompromised opinions." />
-        <link rel="stylesheet" type="text/css" href="/styles/style.css?v=1758508520" />
-        <link rel="stylesheet" type="text/css" href="/styles/article.css?v=1758508520" />
+        <link rel="stylesheet" type="text/css" href="/styles/style.css?v=1758508720" />
+        <link rel="stylesheet" type="text/css" href="/styles/article.css?v=1758508720" />
         <link rel="icon" href="/assets/images/icon.png">
         
         <!-- Open Graph / Facebook -->
@@ -90,10 +90,10 @@ export async function onRequest(context) {
             </div>
           </div>
         </div>
-        <script src="/scripts/sanitizeText.js?v=1758508520"></script>
-        <script src="/scripts/splat.js?v=1758508520"></script>
-        <script src="/scripts/comments.js?v=1758508520"></script>
-        <script src="/scripts/read.js?v=1758508520"></script>
+        <script src="/scripts/sanitizeText.js?v=1758508720"></script>
+        <script src="/scripts/splat.js?v=1758508720"></script>
+        <script src="/scripts/comments.js?v=1758508720"></script>
+        <script src="/scripts/read.js?v=1758508720"></script>
       </body>
       </html>
     `;
