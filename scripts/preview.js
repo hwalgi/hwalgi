@@ -33,6 +33,7 @@ function finishReview() {
 function completeReview() {
     if (document.getElementById("pwd").value.trim() == "") {
         alert("Please enter your password.")
+        return
     }
 
     let formData = new FormData();
