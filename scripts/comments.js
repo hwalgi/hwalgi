@@ -21,7 +21,7 @@ function loadComments(num) {
         });
     });
 
-    fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vRBLq2bMDXDUL2lzDZK_AtEdaEb7-hxhYarWduAI0cSqQGx65xpeaC6T6cgUj8cTDdkw-pKcxeKkTjj/pub?gid=1144327213&single=true&output=csv").then(x => x.text()).then(
+    fetch(`https://docs.google.com/spreadsheets/d/e/2PACX-1vRBLq2bMDXDUL2lzDZK_AtEdaEb7-hxhYarWduAI0cSqQGx65xpeaC6T6cgUj8cTDdkw-pKcxeKkTjj/pub?gid=1144327213&single=true&output=csv&random=${Date.now}`).then(x => x.text()).then(
         x => {
             postNum = `${num},`
             commentsRaw = x.split("\n").filter(x => x.startsWith(postNum)).map(x => x.slice(postNum.length)).filter(x => !x.startsWith(",#N/A")).map(x => [x.slice(0, x.length - ("hwalgi" + x.split(",hwalgi")[x.split(",hwalgi").length - 1]).length - 1), "hwalgi" + x.split(",hwalgi")[x.split(",hwalgi").length - 1].trim().replace(",","")])

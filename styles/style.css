@@ -453,3 +453,27 @@ video {
 .btnGroup > button:active {
 	scale: 0.9;
 }
+
+.listCont {
+	margin: 10px;
+	box-sizing: border-box;
+}
+.listCont > a {
+	border-bottom: solid 1px;
+	width: 100%;
+	display: block;
+	padding: 10px;
+	border-color: white;
+	transition: 0.2s;
+	box-sizing: border-box;
+}
+.listCont > a:nth-of-type(1) {
+	border-top: solid 1px;
+	border-color: white;
+}
+.listCont > a:hover {
+	font-size: 35px;
+}
+.listCont > a:active {
+	padding-left: 30px;
+}

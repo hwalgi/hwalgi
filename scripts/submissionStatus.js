@@ -25,7 +25,7 @@ intervalID = setInterval(() => {
                     document.getElementById("sub").innerHTML = `Your submission has been accepted and published. You can view it live at <a href="https://www.hwalgi.org/article/${splats[ind]}">here</a>.`
 
                     document.getElementById("conf").style.scale = 1
-                    fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=1228636917&single=true&output=csv").then(r => r.text()).then(p => {
+                    fetch(`https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=1228636917&single=true&output=csv&random=${Date.now}`).then(r => r.text()).then(p => {
                         rows = p.split("\n").map(x => x.replaceAll(",", "").trim()).filter(x => x.length > 0)
                         ids = rows.map(x => x.split("*")[0].trim())
                         hours = rows.map(x => parseFloat(x.split("*")[1].trim()))
@@ -60,7 +60,7 @@ intervalID = setInterval(() => {
             })
             clearInterval(intervalID)
         } else {
-            fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=387143471&single=true&output=csv").then(r => r.text()).then(
+            fetch(`https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=387143471&single=true&output=csv&random=${Date.now}`).then(r => r.text()).then(
                 p => {  
                     if (p.includes(id)) {
                         document.getElementById("title").innerText = "Submitted"
@@ -84,5 +84,3 @@ intervalID = setInterval(() => {
         }
     })
 }, 1000)
-
-// https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=1228636917&single=true&output=csv
