@@ -13,6 +13,7 @@ intervalID = setInterval(() => {
         allStatus = allT.map(x => x[1].trim())
         // if it has been reviewed
         if (allIDs.includes(id)) {
+            clearInterval(intervalID)
             fetch(`https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=1511671296&single=true&output=csv&random=${Date.now()}`).then(r => r.text()).then(d => {
                 rows = d.split("\n")
                 splats = rows.map(x => getSplat(x.split(",")[0].trim()))
@@ -30,11 +31,14 @@ intervalID = setInterval(() => {
                         ids = rows.map(x => x.split("*")[0].trim())
                         hours = rows.map(x => parseFloat(x.split("*")[1].trim()))
 
+                        if (hours[ids.indexOf(id)] == 0 || hours[ids.indexOf(id)] == undefined) {
+                            document.getElementById("certifBTN").disabled = true
+                            document.getElementById("certifBTN").innerText = "certificate isn't ready yet"
+                        }
+
                         document.getElementById("name").innerText = authors[ind]
                         document.getElementById("hours").innerText = `${hours[ids.indexOf(id)]} hours`
-                        document.getElementById("titleCont").innerHTML += `<button onclick="showCertif()">Show hours certificate</button>`
-
-                        clearInterval(intervalID)
+                        document.getElementById("certifBTN").hidden = false
                     })
                 } else if (allStatus[allIDs.indexOf(id)] == "FALSE") {
                     fetch(`https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=1228636917&single=true&output=csv&random=${Date.now()}`).then(r => r.text()).then(p => {
@@ -46,21 +50,30 @@ intervalID = setInterval(() => {
                             document.getElementById("title").innerText = "Rejected"
                             document.getElementById("sub").innerText = "Thank you for your submission. At this time, Hwalgi is not ready to provide publication to your piece. We encourage you to submit again in the future. We have awarded half of your claimed hours to acknowledge your time and consideration."
 
+                            if (hours[ids.indexOf(id)] == 0 || hours[ids.indexOf(id)] == undefined) {
+                                document.getElementById("certifBTN").disabled = true
+                                document.getElementById("certifBTN").innerText = "certificate isn't ready yet"
+                            }
+
                             document.getElementById("name").innerText = auts[ids.indexOf(id)]
                             document.getElementById("hours").innerText = `${hours[ids.indexOf(id)]} hours`
-                            document.getElementById("titleCont").innerHTML += `<button onclick="showCertif()">Show hours certificate</button>`
+                            document.getElementById("certifBTN").hidden = false
                         }
                     })
                 } else {
                     document.getElementById("title").innerText = "Flagged"
                     document.getElementById("sub").innerText = `Your submission has been flagged as spam. If you believe this is incorrect, please email us at contact@hwalgi.org with the submission ID: ${id}`
 
+                    if (hours[ids.indexOf(id)] == 0 || hours[ids.indexOf(id)] == undefined) {
+                        document.getElementById("certifBTN").disabled = true
+                        document.getElementById("certifBTN").innerText = "certificate isn't ready yet"
+                    }
+
                     document.getElementById("name").innerText = auts[ids.indexOf(id)]
                     document.getElementById("hours").innerText = `${hours[ids.indexOf(id)]} hours`
-                    document.getElementById("titleCont").innerHTML += `<button onclick="showCertif()">Show hours certificate</button>`
+                    document.getElementById("certifBTN").hidden = false
                 }
             })
-            clearInterval(intervalID)
         } else {
             fetch(`https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=387143471&single=true&output=csv&random=${Date.now()}`).then(r => r.text()).then(
                 p => {  
