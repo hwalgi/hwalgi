@@ -23,7 +23,7 @@ export async function onRequest(context) {
     
     let rows = data.split("\n").map(x => x.split(","))
     let authors = rows.map(x => x[x.length - 2].trim())
-    let titles = rows.map(x => x.slice(0, x.length - 3).join(",").trim())
+    let titles = rows.map(x => x.slice(0, x.length - 2).join(",").trim())
 
     let num = titles.map(x => getSplat(x)).indexOf(slug);
 
