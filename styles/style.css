@@ -315,11 +315,17 @@ video {
 	min-width: 90vw;
 	flex-wrap: wrap;
 }
+.profile {
+}
 .profile > h3 {
 	margin-bottom: 0;
 }
 .profile > p {
 	margin: 0;
+}
+.profile a {
+	word-break: break-all;
+	max-width: 100%;
 }
 #banner {
 	width: min(calc(100% - 40px), 600px);
