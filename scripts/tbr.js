@@ -7,6 +7,7 @@ fetch(`https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY
         allReviewedIDs = allT.map(x => x[0])
 
         fetch(`https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=1745903701&single=true&output=csv&random=${Date.now}`).then(x => x.text()).then(r => {
+            document.getElementById("loading").hidden = true
             for (id of allSubmittedIDs) {
                 if (!allReviewedIDs.includes(id)) {
                     cont = r.split("\n").filter(x => x.startsWith(id))[0].trim().split(",")
