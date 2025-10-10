@@ -10,7 +10,7 @@ fetch(`https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY
             document.getElementById("loading").hidden = true
             for (id of allSubmittedIDs) {
                 if (!allReviewedIDs.includes(id)) {
-                    cont = r.split("\n").filter(x => x.startsWith(id))[0].trim().split(",")
+                    cont = r.split("(::)(::)").filter(x => x.startsWith(id))[0].trim().split(",")
                     tit = cont[1].split(" AUTHORBYNAME")[0]
                     a = document.createElement("a")
                     a.innerText = tit.split(" ...").join(" (").trim() + ")"
