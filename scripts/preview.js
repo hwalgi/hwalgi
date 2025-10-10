@@ -61,6 +61,7 @@ function completeReview() {
             }).then(x => {
                 closeRF()
                 alert("Thank you!")
+                window.location.href = "/pending.html"
             })
         }
     })
