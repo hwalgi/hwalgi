@@ -62,7 +62,7 @@ intervalID = setInterval(() => {
                     })
                 } else {
                     document.getElementById("title").innerText = "Flagged"
-                    document.getElementById("sub").innerText = `Your submission has been flagged as spam. If you believe this is incorrect, please email us at contact@hwalgi.org with the submission ID: ${id}`
+                    document.getElementById("sub").innerText = `Your submission has been flagged as a duplicate or invalid submission. If you believe this is incorrect, please email us at contact@hwalgi.org with the submission ID: ${id}`
 
                     if (hours[ids.indexOf(id)] == 0 || hours[ids.indexOf(id)] == undefined) {
                         document.getElementById("certifBTN").disabled = true
