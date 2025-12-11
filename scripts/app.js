@@ -19,7 +19,7 @@ window.addEventListener("load", () => {
     for (let ind = 0; ind < letters.length; ind++) {
         setTimeout(() => {
             letters[ind].style.translate = "0 -1em"
-        }, Math.abs(ind-letters.length/2 + 1)*200)
+        }, Math.abs(ind - letters.length / 2 + 1) * 200)
     }
     setTimeout(() => {
         document.getElementById("sub").style.opacity = 1
@@ -29,8 +29,8 @@ window.addEventListener("load", () => {
                     top: 200,
                     left: 0,
                     behavior: "smooth",
-                  });
+                });
             }
         }, 300)
-    }, Math.abs(0 - letters.length/2 + 1)*200 + 2000)
+    }, Math.abs(0 - letters.length / 2 + 1) * 200 + 2000)
 })
