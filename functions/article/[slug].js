@@ -1,15 +1,15 @@
 function getSplat(str) {
-    let splat = str.replace(/[^a-zA-Z]/g, "_").toLowerCase();
-    while (splat.includes("__")) {
-        splat = splat.replaceAll("__", "_")
-    }
-    if (splat.startsWith("_")) {
-        splat = splat.slice(1,)
-    }
-    if (splat.endsWith("_")) {
-        splat = splat.slice(0, -1) 
-    }
-    return splat
+  let splat = str.replace(/[^a-zA-Z]/g, "_").toLowerCase();
+  while (splat.includes("__")) {
+    splat = splat.replaceAll("__", "_")
+  }
+  if (splat.startsWith("_")) {
+    splat = splat.slice(1,)
+  }
+  if (splat.endsWith("_")) {
+    splat = splat.slice(0, -1)
+  }
+  return splat
 }
 
 export async function onRequest(context) {
@@ -20,7 +20,7 @@ export async function onRequest(context) {
     const data = await resp.text();
     const doiresp = await fetch(`https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=1370662873&single=true&output=csv&random=${Date.now()}`);
     const doidata = await doiresp.text();
-    
+
     let rows = data.split("\n").map(x => x.split(","))
     let authors = rows.map(x => x[x.length - 2].trim())
     let titles = rows.map(x => x.slice(0, x.length - 2).join(",").trim())
@@ -72,6 +72,8 @@ export async function onRequest(context) {
           <sub id="aut">${authors[num]}</sub>
           <p id="cont">contents (loading)...</p>
 
+          <sub>All opinions are the author's own. Hwalgi does not endorse or oppose any opinions.</sub>
+          
           <div class="comments">
             <h2>Comments</h2>
             <h3>Submit a comment</h3>
