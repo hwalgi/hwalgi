@@ -1,5 +1,5 @@
 function uploadTextArticleToZenodo(articleTitle, articleText, authorName, description) {
-  const ACCESS_TOKEN = "R6jVv43bFlwfTe1YWXN18Ivh4stHIzkS6qR3zEVrxqu01QJ6oQDYLpyBHfjB";
+  const ACCESS_TOKEN = "???";
 
   // Step 1: Create a new deposition
   const createResponse = UrlFetchApp.fetch("https://zenodo.org/api/deposit/depositions", {

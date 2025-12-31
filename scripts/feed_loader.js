@@ -23,10 +23,10 @@ async function getData() {
                 let recent = 0
                 for (let i = titles.length - 1; i >= 0; i--) {
                     try {
-                        if (titles.map(x => x.toLowerCase()).indexOf(titles[i].toLowerCase()) != i) {
+                        if (titles.map(x => getSplat(x)).indexOf(getSplat(titles[i])) != i) {
                             continue
                         }
-                        let latestI = titles.map(x => x.toLowerCase()).lastIndexOf(titles[i].toLowerCase())
+                        let latestI = titles.map(x => getSplat(x)).lastIndexOf(getSplat(titles[i]))
                         let title = titles[latestI]
                         let aut = authors[latestI]
                         let tag = tags[latestI]
