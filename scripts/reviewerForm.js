@@ -17,9 +17,9 @@ function completeReview() {
     formData.append("entry.1643100856", document.getElementById("reviewerTitle").innerText + "\n" + document.getElementById("reviewerSub").innerText + "\n" + document.getElementById("cont").innerHTML + `
     <details id="sources">
       <summary>Sources</summary>
-      <ol>
-        ${allSources.length == 0 ? "This article does not have listed sources." : allSources.map(x => `<li>${x}</li>`).join("\n")}
-      </ol>
+      ${allSources.length == 0 ? "This article does not have listed sources." : "<ol>"}
+      ${allSources.length == 0 ? "" : allSources.map(x => `<li>${x}</li>`).join("\n")}
+      ${allSources.length == 0 ? "" : "</ol>"}
     </details>`);
     formData.append("entry.1051208987", document.getElementById("approve").value)
     formData.append("entry.504218849", document.getElementById("tag").value)

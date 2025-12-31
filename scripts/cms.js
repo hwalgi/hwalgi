@@ -11,8 +11,6 @@ fetch(`https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY
         a.innerText = tit.join(" (").toUpperCase() + ")"
         document.getElementById("listOfPending").appendChild(a)
         a.href = `/edit.html?${splat}`
-        // text = art.slice(art.split(",\"")[0].length + 2, art.length - tag.length - aut.length - 3).replaceAll("\"\"", "\"")
-        // text = text.substring(0, text.lastIndexOf("\""))
     }
     document.getElementById("loading").hidden = true
 })
