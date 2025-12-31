@@ -148,13 +148,19 @@ summary {
 
 summary::before {
 	content: "+";
-	transition: 0.2s;
+	transition: 0.8s;
 	display: inline-block;
-	margin-right: 15px;
-	margin-left: 10px;
+	padding: 0;
 	scale: 1.5;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 30px;
+	aspect-ratio: 1/1;
+	text-align: center;
+	font-family: "Consolas";
 }
 
 details[open] summary::before {
-	rotate: 45deg;
+	rotate: 225deg;
 }
