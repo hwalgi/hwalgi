@@ -142,11 +142,17 @@ summary::-webkit-details-marker {
 
 summary {
 	list-style: none;
+	font-weight: bold;
+	padding-right: 10px;
 }
 
 summary::before {
 	content: "+";
 	transition: 0.2s;
+	display: inline-block;
+	margin-right: 15px;
+	margin-left: 10px;
+	scale: 1.5;
 }
 
 details[open] summary::before {
