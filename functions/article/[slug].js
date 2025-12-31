@@ -38,8 +38,8 @@ export async function onRequest(context) {
         <title>${tit[0].toLocaleLowerCase()} | Hwalgi</title>
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <meta name="description" content="Hwalgi is host to award-winning, unflinching, uncompromised opinions." />
-        <link rel="stylesheet" type="text/css" href="/styles/style.css?v=1766648738" />
-        <link rel="stylesheet" type="text/css" href="/styles/article.css?v=1766648738" />
+        <link rel="stylesheet" type="text/css" href="/styles/style.css?v=1767120429" />
+        <link rel="stylesheet" type="text/css" href="/styles/article.css?v=1767120429" />
         <link rel="icon" href="/assets/images/icon.png">
         
         <!-- Open Graph / Facebook -->
