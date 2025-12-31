@@ -13,15 +13,19 @@ async function getData() {
                 console.log(rows)
                 let authors = rows.map(x => x[x.length - 2].trim())
                 let titles = rows.map(x => x.slice(0, x.length - 2).join(",").trim())
-                let tags = rows.map(x => x[x.length-1].trim())
+                let tags = rows.map(x => x[x.length - 1].trim())
 
                 titles = titles.map(x => x.startsWith("\"") ? x.slice(1,) : x).map(x => x.endsWith("\"") ? x.slice(0, -1) : x)
 
                 let replaced = []
                 let tagList = []
 
+                let recent = 0
                 for (let i = titles.length - 1; i >= 0; i--) {
                     try {
+                        if (titles.map(x => x.toLowerCase()).indexOf(titles[i].toLowerCase()) != i) {
+                            continue
+                        }
                         let title = titles[i]
                         let aut = authors[i]
                         let tag = tags[i]
@@ -40,9 +44,10 @@ async function getData() {
                         replaced.push(tag + " Place")
                         tagList.push(tag)
 
-                        if (i >= titles.length - 2) {
-                            document.getElementById(`new${i - titles.length + 3}`).href = `/article/${getSplat(title)}`
-                            document.getElementById(`new${i - titles.length + 3}`).innerHTML = contents
+                        if (recent < 2) {
+                            document.getElementById(`new${2 - recent}`).href = `/article/${getSplat(title)}`
+                            document.getElementById(`new${2 - recent}`).innerHTML = contents
+                            recent++
                         }
                     } catch (error) {
                         console.log(error)

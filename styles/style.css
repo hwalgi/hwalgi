@@ -10,7 +10,9 @@
 
 :root {
 	--spec-black: rgb(14, 14, 14);
-	--spec-orange:rgb(209, 67, 15) /* IN PRINT AND MEDIA, #FF4400 */;
+	--spec-orange: rgb(209, 67, 15)
+		/* IN PRINT AND MEDIA, #FF4400 */
+	;
 }
 
 body {
@@ -22,20 +24,22 @@ body {
 }
 
 ::-moz-selection {
-  color: var(--spec-black);
-  background: var(--spec-orange);
+	color: var(--spec-black);
+	background: var(--spec-orange);
 }
 
 ::selection {
-  color: var(--spec-black);
-  background: var(--spec-orange);
+	color: var(--spec-black);
+	background: var(--spec-orange);
 }
 
-h1, h2 {
+h1,
+h2 {
 	text-transform: uppercase;
 	color: var(--spec-orange);
 	font-weight: 600;
 }
+
 h3 {
 	text-transform: lowercase;
 	font-weight: 600;
@@ -64,12 +68,13 @@ h3 {
 	width: 100%;
 }
 
-#title > .letter {
+#title>.letter {
 	display: inline-block;
 	transition: translate 2s;
 	min-width: 15px;
 }
-.title > sub {
+
+.title>sub {
 	text-align: center;
 }
 
@@ -93,7 +98,8 @@ h3 {
 	width: 350px;
 	z-index: 2;
 }
-.navbar > a {
+
+.navbar>a {
 	background-color: var(--spec-black);
 	border-radius: 100vmin;
 	border: solid var(--spec-orange);
@@ -106,16 +112,19 @@ h3 {
 	font-weight: normal;
 	color: white;
 }
-.navbar > a.active {
+
+.navbar>a.active {
 	background-color: white;
 	color: var(--spec-orange);
 	font-weight: 600;
 }
-.navbar > a:hover {
+
+.navbar>a:hover {
 	border: solid var(--spec-black);
 	font-weight: 600;
 }
-.navbar > a.active:hover {
+
+.navbar>a.active:hover {
 	border: solid white;
 }
 
@@ -142,7 +151,9 @@ b {
 	text-align: left;
 }
 
-input, #text, .checkbox {
+input,
+#text,
+.checkbox {
 	border: none;
 	font-family: inherit;
 	font-size: inherit;
@@ -161,14 +172,18 @@ input, #text, .checkbox {
 	overflow-y: scroll;
 	color: black !important;
 }
+
 #text * {
 	font-family: inherit !important;
 }
+
 #text b {
 	color: black;
 }
 
-.form  > button, input[type="submit"], .btnGroup > button {
+.form>button,
+input[type="submit"],
+.btnGroup>button {
 	background-color: var(--spec-orange);
 	border-radius: 100vmin;
 	border: none;
@@ -179,13 +194,15 @@ input, #text, .checkbox {
 }
 
 input[type="checkbox"] {
-	visibility: hidden;/* <-- Hide the default checkbox. The rest is to hide and allow tabbing, which display:none prevents */
+	visibility: hidden;
+	/* <-- Hide the default checkbox. The rest is to hide and allow tabbing, which display:none prevents */
 	display: block;
 	height: 0;
 	width: 0;
 	position: absolute;
 	overflow: hidden;
 }
+
 .checkbox {
 	padding: 15px;
 	box-sizing: border-box;
@@ -193,21 +210,25 @@ input[type="checkbox"] {
 	display: flex;
 	align-items: center;
 }
-.checkbox span {/* <-- Style the artificial checkbox */
-  min-height: 25px;
-  min-width: 25px;
-  max-height: 30px;
-  max-width: 30px;
-  border-radius: 100vmin;
-  border: none;
-  background-color: white;
-  border: solid 1px var(--spec-orange);
-  position: relative;
-  display: inline-block;
-  overflow: auto;
-  margin-left: 20px;
+
+.checkbox span {
+	/* <-- Style the artificial checkbox */
+	min-height: 25px;
+	min-width: 25px;
+	max-height: 30px;
+	max-width: 30px;
+	border-radius: 100vmin;
+	border: none;
+	background-color: white;
+	border: solid 1px var(--spec-orange);
+	position: relative;
+	display: inline-block;
+	overflow: auto;
+	margin-left: 20px;
 }
-input[type="checkbox"]:checked + span::after {/* <-- Style its checked state */
+
+input[type="checkbox"]:checked+span::after {
+	/* <-- Style its checked state */
 	content: "";
 	font-size: 10px;
 	width: 90%;
@@ -235,6 +256,7 @@ input[type="checkbox"]:checked + span::after {/* <-- Style its checked state */
 	width: 100vw;
 	user-select: none;
 }
+
 #bg {
 	align-items: center;
 	box-sizing: border-box;
@@ -245,6 +267,7 @@ input[type="checkbox"]:checked + span::after {/* <-- Style its checked state */
 	justify-content: center;
 	width: 150vw;
 }
+
 .bgDiv {
 	align-items: center;
 	display: flex;
@@ -254,6 +277,7 @@ input[type="checkbox"]:checked + span::after {/* <-- Style its checked state */
 	transition: 0.2s;
 	width: 100px;
 }
+
 .bgDiv:hover {
 	opacity: 0.5;
 }
@@ -275,7 +299,7 @@ video {
 
 .pfp {
 	width: 150px;
-	height:150px;
+	height: 150px;
 	display: block;
 	object-fit: cover;
 	aspect-ratio: 1/1;
@@ -288,12 +312,15 @@ video {
 	justify-content: center;
 	align-items: center;
 }
-.profile:nth-child(2n) > .pfp {
+
+.profile:nth-child(2n)>.pfp {
 	rotate: 5deg;
 }
-.profile:nth-child(2n+1) > .pfp {
+
+.profile:nth-child(2n+1)>.pfp {
 	rotate: -3deg;
 }
+
 .profile {
 	display: flex;
 	flex-direction: column;
@@ -302,12 +329,14 @@ video {
 	max-width: 150px;
 	filter: drop-shadow(0 0 10px var(--spec-black));
 }
+
 .pfpOuter {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	position: relative;
 }
+
 .profiles {
 	display: flex;
 	justify-content: center;
@@ -315,18 +344,22 @@ video {
 	min-width: 90vw;
 	flex-wrap: wrap;
 }
-.profile {
-}
-.profile > h3 {
+
+.profile {}
+
+.profile>h3 {
 	margin-bottom: 0;
 }
-.profile > p {
+
+.profile>p {
 	margin: 0;
 }
+
 .profile a {
 	word-break: break-all;
 	max-width: 100%;
 }
+
 #banner {
 	width: min(calc(100% - 40px), 600px);
 	background-color: var(--spec-orange);
@@ -345,6 +378,7 @@ video {
 	text-align: center;
 	transition: 0.5s;
 }
+
 #banner::before {
 	content: "!";
 	position: absolute;
@@ -359,21 +393,22 @@ video {
 	top: 50%;
 	translate: 0 -50%;
 }
-#banner > a {
+
+#banner>a {
 	color: white;
 	display: inline;
 }
 
 /* WebKit (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 3px;
+	width: 5px;
+	height: 3px;
 }
 
 ::-webkit-scrollbar-track {
-  background: inherit;
-  border-radius: 0 10px 10px 0;
-  overflow: hidden;
+	background: inherit;
+	border-radius: 0 10px 10px 0;
+	overflow: hidden;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -395,6 +430,7 @@ video {
 	border-right: none;
 	color: white;
 }
+
 .stickyBtn:hover {
 	padding-right: 30px;
 	background-color: var(--spec-orange);
@@ -424,10 +460,13 @@ video {
 	border-bottom: solid 3px var(--spec-orange);
 	transition: 0.2s;
 }
+
 .reviewerForm * {
 	color: black;
 }
-.reviewerForm > select, .reviewerForm > input {
+
+.reviewerForm>select,
+.reviewerForm>input {
 	border: solid 1px var(--spec-black);
 	padding: 10px;
 	margin: 10px 0;
@@ -447,24 +486,29 @@ video {
 	display: flex;
 	width: 100%;
 }
-.btnGroup > button {
+
+.btnGroup>button {
 	flex: 1;
 	margin: 5px;
 	box-sizing: border-box;
 	transition: 0.2s;
 }
-.btnGroup > button:hover {
+
+.btnGroup>button:hover {
 	background-color: var(--spec-black);
 }
-.btnGroup > button:active {
+
+.btnGroup>button:active {
 	scale: 0.9;
 }
 
 .listCont {
 	margin: 10px;
 	box-sizing: border-box;
+	margin-bottom: 100px;
 }
-.listCont > a {
+
+.listCont>a {
 	border-bottom: solid 1px;
 	width: 100%;
 	display: block;
@@ -473,11 +517,13 @@ video {
 	transition: 0.2s;
 	box-sizing: border-box;
 }
-.listCont > a:hover {
+
+.listCont>a:hover {
 	background-color: var(--spec-orange);
 	color: var(--spec-black);
 	font-weight: bold;
 }
-.listCont > a:active {
+
+.listCont>a:active {
 	padding-left: 30px;
 }

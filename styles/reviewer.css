@@ -1,0 +1,8 @@
+#sourcesBox {
+    width: 100%;
+    height: 6em;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 10px;
+}

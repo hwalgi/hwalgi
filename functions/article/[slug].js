@@ -25,7 +25,7 @@ export async function onRequest(context) {
     let authors = rows.map(x => x[x.length - 2].trim())
     let titles = rows.map(x => x.slice(0, x.length - 2).join(",").trim())
 
-    let num = titles.map(x => getSplat(x)).indexOf(slug);
+    let num = titles.map(x => getSplat(x)).lastIndexOf(slug);
 
     let tit = titles[num].replaceAll("\"", "").split("...").map(x => x.trim())
 
@@ -95,6 +95,7 @@ export async function onRequest(context) {
         <script src="/scripts/sanitizeText.js?v=1766648738"></script>
         <script src="/scripts/splat.js?v=1766648738"></script>
         <script src="/scripts/comments.js?v=1766648738"></script>
+        <script src="/scripts/readUtils.js?v=1766648738"></script>
         <script src="/scripts/read.js?v=1766648738"></script>
       </body>
       </html>
