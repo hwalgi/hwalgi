@@ -1,11 +1,13 @@
 .story {
 	text-transform: uppercase;
 }
+
 sub {
 	color: var(--spec-orange);
 	display: block;
 }
-.story > sub {
+
+.story>sub {
 	text-transform: lowercase;
 	font-size: 18px;
 }
@@ -17,9 +19,11 @@ sub {
 	text-transform: capitalize;
 	bottom: 5px;
 }
+
 .author::before {
 	content: "(";
 }
+
 .author::after {
 	content: ")";
 }
@@ -27,11 +31,12 @@ sub {
 a.story {
 	transition: 0.2s;
 }
+
 a.story:hover {
 	background-color: rgba(255, 255, 255, 0.02);
 }
 
-.left > a:last-child, .right > a:last-child {
+.story.filler {
 	border-bottom: none;
 }
 
@@ -47,11 +52,13 @@ a.story:hover {
 	top: 95vh;
 	width: 100%;
 }
+
 .tags {
 	display: flex;
 	flex-wrap: wrap;
 }
-.tags > button {
+
+.tags>button {
 	background-color: transparent;
 	border-radius: 100vmin;
 	border: solid 3px var(--spec-orange);
@@ -67,30 +74,39 @@ a.story:hover {
 	text-decoration: line-through;
 	font-style: italic;
 }
-.tags > .tagSelected {
+
+.tags>.tagSelected {
 	background-color: var(--spec-orange);
 	color: var(--spec-black);
 	opacity: 1;
 	text-decoration: none;
 	font-style: normal;
 }
-.tags > .tagSelected:hover, .tags > button:hover, .tags > button:active {
+
+.tags>.tagSelected:hover,
+.tags>button:hover,
+.tags>button:active {
 	rotate: -2deg;
 	font-weight: 600;
 }
-.tags > button:active {
+
+.tags>button:active {
 	opacity: 0.3;
 }
-.left, .right {
+
+.left,
+.right {
 	border-bottom: solid 1px rgba(255, 255, 255, 0.1);
 	display: flex;
 	flex-direction: column;
-	flex:1;
+	flex: 1;
 	min-width: 300px;
 }
+
 .left {
 	border-right: solid 1px rgba(255, 255, 255, 0.1);
 }
+
 .story {
 	border-bottom: solid 1px rgba(255, 255, 255, 0.1);
 	color: inherit;
@@ -105,6 +121,7 @@ a.story:hover {
 	height: 100%;
 
 }
+
 .ad {
 	border-radius: 100vmin;
 	left: 0;
@@ -116,7 +133,8 @@ a.story:hover {
 	justify-content: center;
 	align-items: center;
 }
-.ad > a {
+
+.ad>a {
 	background-color: white;
 	border-radius: 100vmin;
 	color: var(--spec-orange);
@@ -138,20 +156,22 @@ a.story:hover {
 	justify-content: center;
 	align-items: center;
 }
+
 .imprint {
 	background-color: var(--spec-orange);
 	padding: 5px;
-	width: 100%; 	
+	width: 100%;
 	display: flex;
 	flex-direction: column;
-	margin:10px 0 10px 0;
+	margin: 10px 0 10px 0;
 	rotate: 3deg;
 	justify-content: center;
 	align-items: center;
 	border-radius: 100vmin;
 	max-width: 400px;
 }
-.imprint > * {
-	margin:0;
+
+.imprint>* {
+	margin: 0;
 	color: white;
 }
