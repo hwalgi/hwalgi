@@ -119,6 +119,7 @@ details {
 	border-radius: 10px;
 	max-width: fit-content;
 	box-sizing: border-box;
+	margin-top: 20px;
 }
 
 details>ol>li {
