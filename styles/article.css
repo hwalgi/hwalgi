@@ -135,3 +135,20 @@ details::selection {
 	background-color: var(--spec-black);
 	color: white;
 }
+
+summary::-webkit-details-marker {
+	display: none;
+}
+
+summary {
+	list-style: none;
+}
+
+summary::before {
+	content: "+";
+	transition: 0.2s;
+}
+
+details[open] summary::before {
+	rotate: 45deg;
+}
