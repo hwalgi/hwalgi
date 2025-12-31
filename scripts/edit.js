@@ -4,8 +4,6 @@ fetch(`https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY
 
     num = articles.map(x => getSplat(getTitle(x).join("\n"))).lastIndexOf(spl)
 
-    console.log(window.location.href.split("?")[1])
-
     // serve specific article
     art = articles[num]
     title = getTitle(art)
@@ -16,6 +14,7 @@ fetch(`https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY
 
     text = art.slice(art.split(",\"")[0].length + 2, art.length - tag.length - authorName.length - 3).replaceAll("\"\"", "\"")
     text = text.substring(0, text.lastIndexOf("\""))
+
     document.getElementById("tit").innerHTML = "<span id=\"reviewerTitle\">" + title.join("</span><br><small id=\"reviewerSub\">") + "</small>"
 
     document.getElementById("aut").innerText = authorName
@@ -25,4 +24,11 @@ fetch(`https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY
     } else {
         document.getElementById("cont").innerHTML = sanitizeText(text)
     }
+
+    accordions = document.getElementsByTagName("details")
+    sources = accordions[accordions.length - 1]
+    document.getElementById("sourcesBox").value = [...sources.getElementsByTagName("ol")[0].getElementsByTagName("li")].map(x => x.innerHTML).join("\n").trim()
+    sources.remove()
+
+    document.getElementById("approve").disabled = true
 })

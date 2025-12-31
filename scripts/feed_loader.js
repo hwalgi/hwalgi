@@ -26,9 +26,10 @@ async function getData() {
                         if (titles.map(x => x.toLowerCase()).indexOf(titles[i].toLowerCase()) != i) {
                             continue
                         }
-                        let title = titles[i]
-                        let aut = authors[i]
-                        let tag = tags[i]
+                        let latestI = titles.map(x => x.toLowerCase()).lastIndexOf(titles[i].toLowerCase())
+                        let title = titles[latestI]
+                        let aut = authors[latestI]
+                        let tag = tags[latestI]
 
                         let contents = `${title.split("...")[0].trim()}
                                     <sub>${title.split("...")[1].trim()}</sub>

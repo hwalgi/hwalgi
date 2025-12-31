@@ -32,7 +32,7 @@ function completeReview() {
         allT = t.split("\n").map(x => x.split(","))
         allReviewedIDs = allT.map(x => x[0])
 
-        if (allReviewedIDs.includes(window.location.href.split("?")[window.location.href.split("?").length - 1])) {
+        if (allReviewedIDs.includes(window.location.href.split("?")[window.location.href.split("?").length - 1]) && !window.location.href.includes("/edit")) {
             alert("This has already been reviewed.")
             window.location.href = "/pending.html"
         } else {
@@ -43,7 +43,11 @@ function completeReview() {
             }).then(x => {
                 closeRF()
                 alert("Thank you!")
-                window.location.href = "/pending.html"
+                if (window.location.href.includes("/edit")) {
+                    window.location.href = "/published.html"
+                } else {
+                    window.location.href = "/pending.html"
+                }
             })
         }
     })
