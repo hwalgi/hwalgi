@@ -48,7 +48,7 @@ intervalID = setInterval(() => {
                         hours = rows.map(x => parseFloat(x.split("*")[1].trim()))
                         if (ids.includes(id)) {
                             document.getElementById("title").innerText = "Rejected"
-                            document.getElementById("sub").innerText = "Thank you for your submission. At this time, Hwalgi is not ready to provide publication to your piece. We encourage you to submit again in the future. We have awarded half of your claimed hours to acknowledge your time and consideration."
+                            document.getElementById("sub").innerText = "Thank you for your submission. At this time, Hwalgi is not ready to provide publication to your piece. We encourage you to submit again in the future. We have awarded a portion of your claimed hours to acknowledge your time and consideration."
 
                             if (hours[ids.indexOf(id)] == 0 || hours[ids.indexOf(id)] == undefined) {
                                 document.getElementById("certifBTN").disabled = true
