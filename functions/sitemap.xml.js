@@ -7,7 +7,7 @@ function getSplat(str) {
         splat = splat.slice(1,)
     }
     if (splat.endsWith("_")) {
-        splat = splat.slice(0, -1) 
+        splat = splat.slice(0, -1)
     }
     return splat
 }
@@ -35,17 +35,18 @@ export async function onRequest(context) {
     const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQNzHtt1-FLZgKBvCzwbrfHiY129oKg1ecKKksXo3dsY_HRVmHz2ftWWG4jFDs0YFTPUYZGRnfQ_Hs9/pub?gid=1511671296&single=true&output=csv";
     const response = await fetch(url);
     const data = await response.text()
-    
+
     let titles = data.split("\n").map(x => x.trim().split(",")[0].trim())
+    titles = titles.map(x => getSplat(x)).filter((x, i) => titles.indexOf(x) === i)
     for (let title of titles) {
         xml += `<url>
-    <loc>https://www.hwalgi.org/article/${getSplat(title)}</loc>
+    <loc>https://www.hwalgi.org/article/${title}</loc>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
 </url>`
     }
 
-    return new Response(xml+"\n</urlset>", {
+    return new Response(xml + "\n</urlset>", {
         headers: { "content-type": "text/html; charset=UTF-8" },
     });
 }
